@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forge · The model-agnostic AI coding agent</title>
+    <meta name="description" content="One harness, every provider. Forge routes coding tasks to the cheapest model that can do the job, with automatic cross-provider failover.">
+    <link rel="canonical" href="https://forge.adulari.dev/">
+    <meta name="theme-color" content="#0a0812">
+    <meta property="og:title" content="Forge · The model-agnostic AI coding agent">
+    <meta property="og:description" content="One harness, every provider. Routed to the cheapest model that can do the job, with automatic cross-provider failover.">
+    <meta property="og:image" content="https://forge.adulari.dev/assets/og.svg">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forge.adulari.dev/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://forge.adulari.dev/assets/og.svg">
+    <link rel="icon" href="/assets/forge-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Forge home">
+          <img src="/assets/forge-mark.svg" alt="" width="32" height="32">
+          <span>Forge</span>
+        </a>
+        <div class="nav-links">
+          <a class="nav-link" href="#mesh">Mesh</a>
+          <a class="nav-link" href="#proof">Benchmarks</a>
+          <a class="nav-link" href="#arsenal">Features</a>
+          <a class="nav-link nav-anywhere" href="/anywhere/">Anywhere</a>
+          <a class="nav-link" href="/docs.html">Docs</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Use light theme">☀</button>
+          <a class="nav-cta" href="#install">Install Forge</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <span class="mono-label">AGPL-3.0 · Rust · one static binary</span>
+            <h1>Every model, forged into <span>one agent</span>.</h1>
+            <p class="lead">Connect Anthropic, OpenAI, Groq, Ollama, or the Claude subscription you already pay for. Forge routes every task to the cheapest model that can do it, and fails over when one goes down.</p>
+            <div class="actions">
+              <a class="button button-primary" href="#install">Install Forge</a>
+              <a class="button button-secondary" href="https://github.com/adulari/forge">Explore Forge on GitHub</a>
+            </div>
+            <p class="trust-line">Free, open source, and local-first</p>
+          </div>
+
+          <div class="forge-window" aria-label="Forge terminal showing a routed coding task">
+            <div class="window-bar">forge · session 4f2a</div>
+            <div class="terminal">
+              <p><span class="prompt">❯</span> Fix the failing auth refresh tests</p>
+              <p class="faint">◇ classifying task · standard</p>
+              <p><span class="hot">◆ route</span> nvidia::deepseek-r1 <span class="faint">free · 68.4</span></p>
+              <p class="faint">  fallback cerebras::qwen-3-coder → claude-cli::sonnet</p>
+              <p>  found refresh token reuse path</p>
+              <p>  patched <span class="hot">src/auth/refresh.rs</span></p>
+              <p><span class="ok">✓</span> 24 tests passed</p>
+              <p><span class="ok">✓</span> clippy clean</p>
+              <p class="faint">cost $0.000 · 21% fewer tokens</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="demo" aria-labelledby="demo-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <span class="mono-label">Forge, live</span>
+              <h2 id="demo-title">The whole workshop in one terminal.</h2>
+            </div>
+            <p>Chat, fan out a typed workflow, dictate locally, or inspect a routing decision. Every surface drives the same session and permission model.</p>
+          </div>
+          <div class="demo-tabs" role="tablist" aria-label="Forge capabilities" data-tabs>
+            <button class="demo-tab" id="tab-chat" role="tab" type="button" aria-controls="panel-chat" aria-selected="true">chat</button>
+            <button class="demo-tab" id="tab-workflow" role="tab" type="button" aria-controls="panel-workflow" aria-selected="false" tabindex="-1">workflow</button>
+            <button class="demo-tab" id="tab-voice" role="tab" type="button" aria-controls="panel-voice" aria-selected="false" tabindex="-1">voice</button>
+            <button class="demo-tab" id="tab-mesh" role="tab" type="button" aria-controls="panel-mesh" aria-selected="false" tabindex="-1">mesh</button>
+          </div>
+          <div class="forge-window">
+            <div class="window-bar">forge · interactive demo</div>
+            <div class="terminal demo-panel" id="panel-chat" role="tabpanel" aria-labelledby="tab-chat">
+              <p><span class="prompt">❯</span> Add span attributes for route parameters</p>
+              <p class="faint">◆ working · groq::qwen-3-coder</p>
+              <p>I'll trace the router construction and update the existing span at the narrowest boundary.</p>
+              <p><span class="ok">✓</span> implementation and regression test complete</p>
+            </div>
+            <div class="terminal demo-panel" id="panel-workflow" role="tabpanel" aria-labelledby="tab-workflow" hidden>
+              <p><span class="prompt">❯</span> /workflow test-hardening</p>
+              <p><span class="hot">⛓</span> investigator <span class="faint">locating uncovered token paths</span></p>
+              <p><span class="hot">⛓</span> builder <span class="faint">adding rotation tests in a worktree</span></p>
+              <p><span class="hot">⛓</span> reviewer <span class="faint">checking cross-account isolation</span></p>
+              <p><span class="ok">✓</span> results merged, 18 tests passed</p>
+            </div>
+            <div class="terminal demo-panel" id="panel-voice" role="tabpanel" aria-labelledby="tab-voice" hidden>
+              <p><span class="hot">● REC</span> 0:08</p>
+              <p class="hot">▂▅▇▃▆█▃▅▇▂▄▇█▆▃▁▅▇</p>
+              <p>“Run the failing store test and explain the migration boundary.”</p>
+              <p class="faint">Local Whisper transcription. Audio never leaves this machine.</p>
+            </div>
+            <div class="terminal demo-panel" id="panel-mesh" role="tabpanel" aria-labelledby="tab-mesh" hidden>
+              <p>task       refactor the auth middleware</p>
+              <p>decision   <span class="hot">standard</span> · multi-file edit</p>
+              <p>selected   <span class="ok">nvidia::deepseek-r1</span></p>
+              <p>fallbacks  cerebras → groq → claude-cli</p>
+              <p class="faint">conserve subscription quota · free model meets threshold</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mesh" aria-labelledby="mesh-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="mesh-title">The Mesh. You connect providers.</h2>
+            <p>Every task is classified into a tier, then routed to the cheapest model that meets the bar, benchmark-ranked against real intelligence and coding scores.</p>
+          </div>
+          <div class="feature-lines">
+            <div class="feature-line">
+              <h3>Reset-aware failover</h3>
+              <p>A per-minute 429 is waited out, not downgraded. Real outages fail over down the ranked catalog across providers.</p>
+            </div>
+            <div class="feature-line">
+              <h3>Subscription conservation</h3>
+              <p>Spreads load onto free frontier models so your metered Claude or Codex quota is spent only where it matters.</p>
+            </div>
+            <div class="feature-line">
+              <h3>Key stacking</h3>
+              <p>Add multiple keys per provider and Forge round-robins across them, multiplying available free-tier rate limits.</p>
+            </div>
+            <div class="feature-line">
+              <h3>Explainable routing</h3>
+              <p>Inspect any decision live with <code>/mesh</code>: exactly why a prompt routed where it did.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-hot" id="proof" aria-labelledby="proof-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="proof-title">Same model. <span class="accent-text">50% more bugs fixed.</span></h2>
+            <p>The honest test of a harness: run the same Claude Sonnet through Forge and the raw CLI on SWE-bench Lite, scored by the official Docker evaluator. The harness is the only difference.</p>
+          </div>
+          <div class="metric-strip" aria-label="Forge benchmark results">
+            <div class="metric"><strong>50%</strong><span>more bugs fixed</span></div>
+            <div class="metric"><strong>21%</strong><span>lower token cost per fix</span></div>
+            <div class="metric"><strong>17+</strong><span>provider integrations</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="arsenal" aria-labelledby="arsenal-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="arsenal-title">Not a wrapper. <span class="accent-text">A full workshop.</span></h2>
+            <p>Forge carries the context, proof, memory, and recovery machinery a long-running coding session needs.</p>
+          </div>
+          <div class="arsenal">
+            <article class="arsenal-item">
+              <h3>Code intelligence</h3>
+              <p>A tree-sitter symbol graph across nine languages: blast radius, call chains, semantic retrieval, and relevant context before every turn.</p>
+            </article>
+            <article class="arsenal-item">
+              <h3>Provenance</h3>
+              <p>Trace a line back to the model, session, prompt, and reasoning that wrote it. Replay the session or fork a counterfactual.</p>
+            </article>
+            <article class="arsenal-item">
+              <h3>Model races</h3>
+              <p>Race three models on one task in parallel worktrees, merge the winner, and let routing learn from recorded wins.</p>
+            </article>
+            <article class="arsenal-item">
+              <h3>Durable workflows</h3>
+              <p>Queue tasks, drain them headless into isolated worktrees, and return to review-ready branches with a digest.</p>
+            </article>
+            <article class="arsenal-item">
+              <h3>Project memory</h3>
+              <p>Typed facts per project are captured at turn end and relevance-ranked back into the next session.</p>
+            </article>
+            <article class="arsenal-item">
+              <h3>Completion you can verify</h3>
+              <p>Tool-grounded gates, doom-loop guards, and recovery for malformed tool calls stop phantom success reports.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" aria-labelledby="anywhere-callout-title">
+        <div class="shell install-box">
+          <div>
+            <span class="badge">New · optional companion</span>
+            <h2 id="anywhere-callout-title">Your Forge sessions, everywhere.</h2>
+          </div>
+          <div>
+            <p class="lead">Leave your desk without leaving your Forge session. Forge Anywhere adds a managed encrypted relay, synced history, and complete workspace handoff while local Forge stays free.</p>
+            <div class="actions">
+              <a class="button button-primary" href="/anywhere/">Explore Forge Anywhere</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="install" aria-labelledby="install-title">
+        <div class="shell install-box">
+          <div>
+            <span class="mono-label">Install</span>
+            <h2 id="install-title">Light the forge.</h2>
+          </div>
+          <div>
+            <p>One static binary. No Node, Python, Electron, or paid API key is required to try it.</p>
+            <div class="command" aria-label="Cargo install command"><span>❯</span> cargo install forge-agent</div>
+            <div class="actions">
+              <a class="button button-secondary" href="https://github.com/adulari/forge#installation">Read installation options</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-compact section-tint" aria-labelledby="home-faq-title">
+        <div class="shell">
+          <h2 id="home-faq-title">The practical questions.</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Why AGPL-3.0?</summary>
+              <p>So Forge stays open: anyone can read, audit, and improve the harness, and improvements flow back instead of disappearing into closed forks.</p>
+            </details>
+            <details>
+              <summary>Is Forge really free?</summary>
+              <p>Yes. Forge is a free static binary with zero paid keys required. Connect free-tier providers or bridge a subscription you already pay for. Forge Anywhere is a separate optional service.</p>
+            </details>
+            <details>
+              <summary>How can I support Forge?</summary>
+              <p>Star the <a href="https://github.com/adulari/forge">Forge repository</a>, file issues, or <a href="https://github.com/sponsors/Adulari">sponsor development</a>.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <p class="copyright">Forge is open source under AGPL-3.0.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="https://github.com/adulari/forge">GitHub</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/anywhere/">Anywhere</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/refunds/">Refunds</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

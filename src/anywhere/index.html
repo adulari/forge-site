@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forge Anywhere · Your Forge sessions, everywhere</title>
+    <meta name="description" content="Reach Forge from any device, sync encrypted history, and hand a live workspace between your machines. €10 monthly or €79 yearly, with a 14-day no-card trial.">
+    <link rel="canonical" href="https://forge.adulari.dev/anywhere/">
+    <meta name="theme-color" content="#0a0812">
+    <meta property="og:title" content="Your Forge sessions, everywhere.">
+    <meta property="og:description" content="Leave your desk without leaving your Forge session. Optional, end-to-end encrypted remote access for Forge.">
+    <meta property="og:image" content="https://forge.adulari.dev/assets/og.svg">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forge.adulari.dev/anywhere/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://forge.adulari.dev/assets/og.svg">
+    <link rel="icon" href="/assets/forge-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
+  </head>
+  <body data-funnel-landing="true">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Forge home">
+          <img src="/assets/forge-mark.svg" alt="" width="32" height="32">
+          <span>Forge</span>
+        </a>
+        <div class="nav-links">
+          <a class="nav-link" href="#handoff">Handoff</a>
+          <a class="nav-link" href="#security">Security</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link nav-anywhere" href="#faq">FAQ</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Use light theme">☀</button>
+          <a class="nav-cta" href="https://app.forge.adulari.dev/auth/github?intent=trial" data-funnel-event="trial_start">Start trial</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero anywhere-hero">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <span class="badge">Forge Anywhere</span>
+            <h1>Your Forge sessions, <span>everywhere.</span></h1>
+            <p class="lead">Leave your desk without leaving your Forge session.</p>
+            <div class="actions">
+              <a class="button button-primary" href="https://app.forge.adulari.dev/auth/github?intent=trial" data-funnel-event="trial_start">Start 14-day trial with GitHub</a>
+              <a class="button button-secondary" href="#how-it-works">See how Anywhere works</a>
+            </div>
+            <p class="trust-line">No card required · trial starts when your first host connects</p>
+          </div>
+
+          <div class="device-stage" aria-label="A Forge session moving from a desktop to a phone and then to a laptop">
+            <div class="handoff-line" aria-hidden="true"></div>
+            <div class="device device-desktop" data-device="desktop · office">
+              <pre><span class="hot">❯</span> refactor token rotation
+◆ working on host “anvil”
+✓ tests passing</pre>
+            </div>
+            <div class="device device-phone" data-device="iPhone · train">
+              <pre>Approval needed
+
+Run migration tests?
+
+<span class="hot">[ approve ]</span>
+
+✓ continued</pre>
+            </div>
+            <div class="device device-laptop" data-device="laptop · home">
+              <pre><span class="ok">✓ workspace received</span>
+branch, diff, session, and history ready</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="how-it-works" aria-labelledby="how-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="how-title">One session. Three places.</h2>
+            <p>A complete remote workflow built around the Forge session already running on your machine.</p>
+          </div>
+          <div class="three-steps">
+            <article class="step">
+              <span class="step-number">01 · Desktop</span>
+              <h3>Start work at your desk.</h3>
+              <p>Forge keeps the local daemon and its token on the host. The managed connector forwards only an explicit allowlist of encrypted requests.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">02 · iPhone</span>
+              <h3>Respond while you are away.</h3>
+              <p>Open the same live session, review progress, approve a safe action, or queue the next job from a personal controller device.</p>
+            </article>
+            <article class="step" id="handoff">
+              <span class="step-number">03 · Laptop</span>
+              <h3>Hand off the whole workspace.</h3>
+              <p>At an idle checkpoint, move the session, base commit, binary patch, and safe untracked files into an isolated worktree on another host.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="boundary-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="boundary-title">Forge stays free. Anywhere adds the managed path.</h2>
+            <p>If Anywhere is disabled, unreachable, expired, or unpaid, local Forge, LAN access, direct pairing, and your own <code>serve --anywhere</code> tunnel keep working.</p>
+          </div>
+          <div class="boundary">
+            <section class="boundary-panel" aria-labelledby="free-title">
+              <span class="mono-label">Always free</span>
+              <h3 id="free-title">Forge</h3>
+              <ul class="check-list">
+                <li>Local coding agent and full session behavior</li>
+                <li>Local and LAN access</li>
+                <li>Direct device pairing</li>
+                <li>User-managed tunnels</li>
+                <li>Open-source AGPL clients and protocol</li>
+              </ul>
+            </section>
+            <section class="boundary-panel paid" aria-labelledby="paid-title">
+              <span class="mono-label">Optional subscription</span>
+              <h3 id="paid-title">Forge Anywhere</h3>
+              <ul class="check-list">
+                <li>Managed relay with stable host identity</li>
+                <li>Three-host personal fleet</li>
+                <li>Encrypted sync, history, and offline browsing</li>
+                <li>Remote jobs and generic push notifications</li>
+                <li>Workspace handoff and encrypted replay links</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-hot" id="security" aria-labelledby="security-title">
+        <div class="shell security-layout">
+          <div>
+            <span class="mono-label">End-to-end encrypted</span>
+            <h2 id="security-title">The service routes envelopes, not your work.</h2>
+            <p class="lead">Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</p>
+            <ul class="check-list">
+              <li>X25519 device exchange and Ed25519 signatures</li>
+              <li>XChaCha20-Poly1305 payload encryption</li>
+              <li>A unique sequence per sender and key epoch rejects replay</li>
+              <li>24-word recovery secret is shown once and confirmed</li>
+              <li>Device revocation rotates the account data-key epoch</li>
+            </ul>
+          </div>
+          <div class="envelope" aria-label="Fields visible and encrypted in a Forge Anywhere envelope">
+            <div class="envelope-row"><span>routing</span><span>recipient · kind · size</span></div>
+            <div class="envelope-row"><span>integrity</span><span>epoch · sequence · signature</span></div>
+            <div class="envelope-row ciphertext"><span>ciphertext</span><span>session content · commands · history · workspace capsule</span></div>
+            <div class="envelope-row"><span>service sees</span><span>routing IDs · time · size · kind · signature</span></div>
+            <div class="envelope-row"><span>service cannot read</span><span>encrypted payload contents</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="sync-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="sync-title">History that follows you, credentials that do not.</h2>
+            <p>Encrypted records cover sessions, messages, checkpoints, tool calls, routing decisions, usage, compactions, memories, settings, commands, skills, agents, and workflows.</p>
+          </div>
+          <div class="feature-lines">
+            <div class="feature-line">
+              <h3>Never uploaded</h3>
+              <p>Provider credentials, keyring contents, indexes and embeddings, push secrets, schedules, queue internals, caches, build output, checkpoints, and uploads stay local.</p>
+            </div>
+            <div class="feature-line">
+              <h3>Offline history</h3>
+              <p>Mobile caches decrypted history locally with device-local encryption, so previous work remains available without a connection.</p>
+            </div>
+            <div class="feature-line">
+              <h3>Conflict-safe files</h3>
+              <p>Divergent file edits create conflict copies instead of overwriting either version. Deletions become encrypted tombstones.</p>
+            </div>
+            <div class="feature-line">
+              <h3>Recovery</h3>
+              <p>Every data-key epoch is wrapped separately to authorized devices and your recovery secret. Forge cannot reconstruct lost recovery words.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="pricing" aria-labelledby="pricing-title">
+        <div class="shell price-layout">
+          <div>
+            <span class="mono-label">Personal plan</span>
+            <h2 id="pricing-title">A workshop that travels.</h2>
+            <p class="lead">Fourteen days of full access, once per GitHub account. No card. Your trial clock starts only when the first host connects.</p>
+            <div class="limits" aria-label="Forge Anywhere plan limits">
+              <div class="limit"><strong>3</strong><span>active hosts</span></div>
+              <div class="limit"><strong>Unlimited</strong><span>personal controllers</span></div>
+              <div class="limit"><strong>5 GB</strong><span>encrypted storage</span></div>
+            </div>
+          </div>
+
+          <form class="plan-picker" aria-label="Choose a Forge Anywhere billing plan">
+            <label class="plan-option">
+              <input type="radio" name="plan" value="annual" checked>
+              <span><span class="plan-name">Annual</span><span class="plan-note">€6.58 per month, billed yearly</span></span>
+              <span class="plan-price">€79/year</span>
+            </label>
+            <label class="plan-option">
+              <input type="radio" name="plan" value="monthly">
+              <span><span class="plan-name">Monthly</span><span class="plan-note">Cancel before the next renewal</span></span>
+              <span class="plan-price">€10/month</span>
+            </label>
+            <div class="plan-action">
+              <a class="button button-primary" href="https://app.forge.adulari.dev/auth/github?intent=trial&amp;plan=annual" data-checkout data-funnel-event="trial_start">Start 14-day trial with GitHub</a>
+              <p class="fine-print">No card required. VAT may apply when you subscribe. Billing is handled by Paddle.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="shell">
+          <h2 id="faq-title">Questions before you connect a host.</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Does Forge become paid?</summary>
+              <p>No. Forge itself, local and LAN access, direct pairing, and user-managed tunnels remain free and unchanged. Forge Anywhere pays for the managed relay, encrypted cloud storage, sync, fleet, jobs, handoff, and replay links.</p>
+            </details>
+            <details>
+              <summary>When does the trial start?</summary>
+              <p>The 14-day no-card trial begins when your first host connects, not when you sign in. One trial is available per GitHub account.</p>
+            </details>
+            <details>
+              <summary>Can the service read my prompts or code?</summary>
+              <p>Encrypted payload contents are readable only by authorized devices. The service processes routing identifiers, timestamps, sizes, envelope kinds, sequences, and signatures. It does not receive the local Forge daemon token.</p>
+            </details>
+            <details>
+              <summary>What happens if I lose my recovery words?</summary>
+              <p>An already-authorized device can enroll another device. If every authorized device and the 24 recovery words are lost, Forge cannot decrypt or recover the cloud history.</p>
+            </details>
+            <details>
+              <summary>What happens after cancellation or expiry?</summary>
+              <p>Paid access continues through the paid-through date. Read-only access allows download, restore, delete, export, and billing changes. Encrypted cloud data is retained for up to 90 days after suspension, with warnings before deletion.</p>
+            </details>
+            <details>
+              <summary>Are teams supported?</summary>
+              <p>Not in version one. Forge Anywhere is for individual developers and personal devices. Team administration and commercial single-tenant hosting are future products.</p>
+            </details>
+            <details>
+              <summary>How large can a workspace handoff be?</summary>
+              <p>A compressed capsule can be up to 100 MB, with individual files up to 25 MB. Unsafe paths, links, devices, secrets, ignored caches, and build output are rejected with a visible explanation.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-hot" aria-labelledby="final-title">
+        <div class="shell install-box">
+          <div>
+            <h2 id="final-title">Leave your desk. Keep the session.</h2>
+          </div>
+          <div>
+            <p>Connect one host, confirm your recovery words, then open the same Forge session from your phone or another computer.</p>
+            <div class="actions">
+              <a class="button button-primary" href="https://app.forge.adulari.dev/auth/github?intent=trial" data-funnel-event="trial_start">Start 14-day trial with GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <p class="copyright">Forge Anywhere is an optional service for free, open-source Forge.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/">Forge</a>
+          <a href="https://github.com/adulari/forge">GitHub</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/refunds/">Refunds</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forge docs · Start here</title>
+    <meta name="description" content="Install Forge, connect a provider, and start a local coding session.">
+    <link rel="canonical" href="https://forge.adulari.dev/docs.html">
+    <meta name="theme-color" content="#0a0812">
+    <meta property="og:title" content="Forge documentation">
+    <meta property="og:description" content="Install Forge, connect a provider, and start a local coding session.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forge.adulari.dev/docs.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="/assets/forge-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="brand" href="/" aria-label="Forge home"><img src="/assets/forge-mark.svg" alt="" width="32" height="32"><span>Forge</span></a><div class="nav-links"><a class="nav-link" href="#install">Install</a><a class="nav-link" href="#first-session">First session</a><a class="nav-link nav-anywhere" href="/anywhere/">Anywhere</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Use light theme">☀</button><a class="nav-cta" href="https://github.com/adulari/forge/tree/main/docs">Full reference</a></div></nav></header>
+
+    <main id="main" class="shell">
+      <header class="legal-hero">
+        <span class="mono-label">Documentation</span>
+        <h1>Make the first spark.</h1>
+        <p class="lead">Install one binary, connect a model provider or subscription, then start a Forge session in a repository.</p>
+      </header>
+      <div class="legal-layout">
+        <nav class="legal-toc" aria-label="Documentation sections"><a href="#install">Install</a><a href="#connect">Connect a provider</a><a href="#first-session">First session</a><a href="#commands">Commands</a><a href="#remote">Remote access</a><a href="#reference">Reference</a></nav>
+        <article class="legal-content">
+          <section id="install">
+            <h2>Install Forge</h2>
+            <p>Install from crates.io when Rust is available:</p>
+            <div class="command"><span>❯</span> cargo install forge-agent</div>
+            <p>Release binaries and additional platform instructions are maintained in the <a href="https://github.com/adulari/forge#installation">Forge installation guide</a>.</p>
+          </section>
+
+          <section id="connect">
+            <h2>Connect a provider</h2>
+            <p>Run the interactive provider setup and choose an API key, local Ollama endpoint, or a supported subscription bridge. Credentials are stored in the operating-system keyring rather than <code>config.toml</code>.</p>
+            <div class="command"><span>❯</span> forge provider add</div>
+            <p>You can connect more than one provider. The Mesh ranks eligible models and fails over across the configured catalog.</p>
+          </section>
+
+          <section id="first-session">
+            <h2>Start a session</h2>
+            <p>Change into a repository and launch Forge. Review the initial permission policy before allowing commands or file changes.</p>
+            <div class="command"><span>❯</span> cd my-project &amp;&amp; forge</div>
+            <p>Inside a session, use <code>/mesh</code> to inspect routing, <code>/workflow</code> to run a typed workflow, and <code>?</code> to open the current key reference.</p>
+          </section>
+
+          <section id="commands">
+            <h2>Useful commands</h2>
+            <div class="feature-lines">
+              <div class="feature-line"><h3><code>forge serve</code></h3><p>Expose the local Forge API for the web or mobile controller.</p></div>
+              <div class="feature-line"><h3><code>forge doctor</code></h3><p>Check providers, credentials, configuration, and local dependencies.</p></div>
+              <div class="feature-line"><h3><code>forge bench swe</code></h3><p>Run the reproducible SWE-bench harness evaluation.</p></div>
+              <div class="feature-line"><h3><code>forge anywhere</code></h3><p>Log in, enroll devices, connect hosts, inspect quota, hand off work, and manage the optional hosted companion.</p></div>
+            </div>
+          </section>
+
+          <section id="remote">
+            <h2>Choose a remote path</h2>
+            <p>Local and LAN controllers, direct pairing, and a tunnel you manage remain free. <a href="/anywhere/">Forge Anywhere</a> adds a managed encrypted relay, stable host identities, sync, remote jobs, workspace handoff, and replay links.</p>
+          </section>
+
+          <section id="reference">
+            <h2>Full reference</h2>
+            <p>The source repository contains the complete <a href="https://github.com/adulari/forge/tree/main/docs">feature and architecture documentation</a>, <a href="https://github.com/adulari/forge/blob/main/docs/comparison.md">sourced comparison</a>, and <a href="https://github.com/adulari/forge/issues">issue tracker</a>.</p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="shell footer-grid"><p class="copyright">Forge documentation follows the open-source project.</p><nav class="footer-links" aria-label="Footer navigation"><a href="/">Forge</a><a href="https://github.com/adulari/forge">GitHub</a><a href="/anywhere/">Anywhere</a><a href="/privacy/">Privacy</a></nav></div></footer>
+  </body>
+</html>
+

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Forge</title>
+  <desc id="description">Forge mark and the words Every model, forged into one agent on a dark ember-lit background.</desc>
+  <defs>
+    <radialGradient id="ember" cx="50%" cy="100%" r="76%">
+      <stop offset="0" stop-color="#6d2019"/>
+      <stop offset="0.5" stop-color="#17100f"/>
+      <stop offset="1" stop-color="#0a0812"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ember)"/>
+  <g transform="translate(76 72)">
+    <rect width="88" height="88" rx="18" fill="#ff8a30"/>
+    <g fill="#12080a" transform="scale(.88)">
+      <rect x="26" y="64" width="44" height="7" rx="2"/>
+      <path d="M38 50h12l10 14H28zM36 36h16l-4 16h-8z"/>
+      <rect x="22" y="24" width="44" height="14" rx="2"/>
+      <path d="m66 24 18 5-18 9z"/>
+    </g>
+    <text x="112" y="63" fill="#f2e9dc" font-family="Arial, sans-serif" font-size="44" font-weight="700">Forge</text>
+  </g>
+  <text x="76" y="302" fill="#f2e9dc" font-family="Arial, sans-serif" font-size="82" font-weight="800" letter-spacing="-3">Every model, forged into</text>
+  <text x="76" y="394" fill="#ff8a30" font-family="Arial, sans-serif" font-size="82" font-weight="800" letter-spacing="-3">one agent.</text>
+  <text x="78" y="493" fill="#a8adc0" font-family="monospace" font-size="25">Open source · model agnostic · local first</text>
+</svg>
+

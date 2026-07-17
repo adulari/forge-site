@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy · Forge</title>
+    <meta name="description" content="How Forge Anywhere handles account, billing, encrypted storage, operational, and first-party funnel data.">
+    <link rel="canonical" href="https://forge.adulari.dev/privacy/">
+    <meta name="theme-color" content="#0a0812">
+    <meta property="og:title" content="Forge Privacy Notice">
+    <meta property="og:description" content="The data Forge Anywhere processes, why it is needed, and how long it is kept.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forge.adulari.dev/privacy/">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="/assets/forge-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Forge home"><img src="/assets/forge-mark.svg" alt="" width="32" height="32"><span>Forge</span></a>
+        <div class="nav-links">
+          <a class="nav-link nav-anywhere" href="/anywhere/">Anywhere</a>
+          <a class="nav-link" href="/terms/">Terms</a>
+          <a class="nav-link" href="/refunds/">Refunds</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Use light theme">☀</button>
+          <a class="nav-cta" href="https://app.forge.adulari.dev">Open app</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="shell">
+      <header class="legal-hero">
+        <span class="mono-label">Legal</span>
+        <h1>Privacy notice.</h1>
+        <p class="legal-meta">Effective 17 July 2026</p>
+      </header>
+      <div class="legal-layout">
+        <nav class="legal-toc" aria-label="Privacy notice sections">
+          <a href="#scope">Scope</a><a href="#data">Data</a><a href="#content">Encrypted content</a><a href="#uses">Uses</a><a href="#sharing">Processors</a><a href="#retention">Retention</a><a href="#rights">Your rights</a><a href="#contact">Contact</a>
+        </nav>
+        <article class="legal-content">
+          <section id="scope">
+            <h2>Scope and controller</h2>
+            <p>This notice covers the Forge website and the optional Forge Anywhere hosted service. Local Forge is open-source software that runs on your devices; data processed only by your local installation is controlled by you.</p>
+            <p>Adulari operates Forge Anywhere and is the controller for account, service, and website data described here. Questions and rights requests can be sent to <a href="mailto:privacy@adulari.dev">privacy@adulari.dev</a>.</p>
+          </section>
+
+          <section id="data">
+            <h2>Data we process</h2>
+            <ul>
+              <li><strong>Account:</strong> immutable GitHub account ID, GitHub login, email when GitHub provides it, account status, and authentication timestamps.</li>
+              <li><strong>Devices and hosts:</strong> identifiers, names you assign, public signing and exchange keys, key epochs, wrapped keys, software version, connection state, and heartbeat time.</li>
+              <li><strong>Service metadata:</strong> envelope routing identifiers, kind, size, timestamp, sequence, signature, object identifiers, quota totals, sync cursors, command status, and categorical acknowledgements.</li>
+              <li><strong>Billing:</strong> Paddle customer and subscription identifiers, plan, tax region, status, paid-through date, and processed webhook identifiers. Forge does not store full payment card details.</li>
+              <li><strong>Security and operations:</strong> token hashes, refresh-token families, login and revocation events, IP-derived security and rate-limit signals, service errors, aggregate usage counters, and metadata-only audit events.</li>
+              <li><strong>Support:</strong> information you choose to include in a support request.</li>
+              <li><strong>Website funnel:</strong> an allowlisted event name, page path, and timestamp for landing view, trial start, first host, first remote session, first handoff, checkout, and paid conversion.</li>
+            </ul>
+          </section>
+
+          <section id="content">
+            <h2>Encrypted content</h2>
+            <p>Session history, messages, tool records, settings, commands, workspace capsules, temporary relay blobs, and replay shares are encrypted on an authorized device before upload. The service stores and routes ciphertext but does not hold the device or recovery keys needed to decrypt it.</p>
+            <div class="callout">We do not collect prompts, filenames, repository names, commands, diffs, transcript content, provider credentials, keyring content, or the local Forge daemon token as analytics or service logs.</div>
+            <p>Some metadata remains visible so the service can route data, enforce replay protection, apply quotas, expire objects, and investigate abuse. End-to-end encryption does not conceal routing IDs, time, size, envelope kind, sequence, or signature.</p>
+          </section>
+
+          <section id="uses">
+            <h2>Why we process data</h2>
+            <ul>
+              <li>Provide authentication, relay, sync, storage, device enrollment, handoff, shares, push, export, and deletion under our contract with you.</li>
+              <li>Process billing, taxes, subscription state, and refunds under our contract and legal obligations.</li>
+              <li>Protect accounts, reject replay, prevent token reuse, rate-limit abuse, diagnose failures, and maintain backups based on legitimate interests in a secure and reliable service.</li>
+              <li>Measure the seven-step product funnel based on legitimate interests in understanding whether the service works, without behavioral profiles or advertising cookies.</li>
+              <li>Comply with tax, accounting, consumer, security, and lawful disclosure obligations.</li>
+            </ul>
+          </section>
+
+          <section id="sharing">
+            <h2>Processors and disclosures</h2>
+            <p>We use GitHub for sign-in, Paddle as merchant of record for checkout and billing, Cloudflare for DNS, edge protection, first-party web analytics, and R2 object storage, and infrastructure providers for the application server and encrypted database backups. Each receives only the data needed for its role.</p>
+            <p>We may disclose limited data when required by law, to protect people or the service, or as part of a business transfer subject to equivalent confidentiality. We do not sell personal data or share it for targeted advertising.</p>
+            <p>These providers may process data outside your country under their applicable transfer mechanisms. Contact us for information relevant to your location.</p>
+          </section>
+
+          <section id="retention">
+            <h2>Retention and deletion</h2>
+            <ul>
+              <li>Consumed workspace capsules and temporary relay blobs are deleted after successful consumption or within 24 hours.</li>
+              <li>Replay shares expire when you choose, up to 30 days.</li>
+              <li>Superseded sync revisions are kept for 7 days; tombstones are kept for 30 days.</li>
+              <li>Expired or suspended subscriptions retain encrypted cloud data for up to 90 days, with warnings 30 and 7 days before scheduled deletion.</li>
+              <li>An account deletion request removes live account and object data within 24 hours. Encrypted backup copies expire within 30 days.</li>
+              <li>Billing and transaction records may be kept longer when tax, accounting, fraud, or dispute law requires it.</li>
+              <li>Short-lived security logs and aggregate funnel events are kept only as long as needed for security and product reliability.</li>
+            </ul>
+          </section>
+
+          <section id="security">
+            <h2>Security and recovery</h2>
+            <p>Forge Anywhere uses short-lived access tokens, rotating refresh-token families with reuse detection, single-use relay tickets, encrypted objects, signed envelopes, replay sequences, owner-scoped database queries, and encrypted off-site backups. No online service can promise absolute security.</p>
+            <p>Your 24 recovery words and device private keys are not sent to the service. Losing every authorized device and the recovery words means encrypted content cannot be recovered by Forge.</p>
+          </section>
+
+          <section id="rights">
+            <h2>Your choices and rights</h2>
+            <p>You can view devices, revoke access, download or export data, delete cloud objects, and delete your account from the app. Depending on your location, you may also ask to access, correct, erase, restrict, object to, or port personal data, and may complain to your local data-protection authority.</p>
+            <p>Essential authentication and security storage is required to operate the account. The site does not use non-essential marketing cookies. Browser theme preference is stored locally and is not analytics.</p>
+          </section>
+
+          <section id="contact">
+            <h2>Changes and contact</h2>
+            <p>Forge Anywhere is not directed to children under 16. We will post material changes here and update the effective date. If a change materially reduces your rights, we will give advance notice when reasonably possible.</p>
+            <p>Email privacy questions or rights requests to <a href="mailto:privacy@adulari.dev">privacy@adulari.dev</a>. For service help, use the <a href="https://github.com/adulari/forge/issues">Forge issue tracker</a> without posting secrets or private content.</p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="shell footer-grid"><p class="copyright">Forge stays open source and free. Anywhere is optional.</p><nav class="footer-links" aria-label="Footer navigation"><a href="/">Forge</a><a href="/anywhere/">Anywhere</a><a href="/terms/">Terms</a><a href="/refunds/">Refunds</a></nav></div></footer>
+  </body>
+</html>
+
