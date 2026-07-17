@@ -13,9 +13,10 @@ function track(event) {
   if (!funnelEventSet.has(event)) return false;
 
   const payload = JSON.stringify({
+    version: 1,
     event,
     path: window.location.pathname,
-    occurred_at: new Date().toISOString()
+    client_timestamp_ms: Date.now()
   });
 
   if (navigator.sendBeacon) {

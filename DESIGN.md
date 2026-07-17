@@ -15,7 +15,7 @@ The site preserves the production Forge identity: a dark, ember-lit workshop pai
 - Light surface: `#FAF8F4`
 - Light text: `#211F1B`
 - Light muted text: `#57544C`
-- Forge orange: `#FF8A30` on dark, `#B65108` for text and controls on light
+- Forge orange: `#FF8A30` on dark, `#A84400` for text and controls on light
 - Hot orange: `#FFB068`
 - Success: `#5CD07A` on dark, `#1E8A47` on light
 
@@ -57,4 +57,3 @@ CSS defines these as semantic custom properties and swaps them through `data-the
 - Pricing selector with two real radio options; annual is selected by default.
 - Native `details` FAQ disclosures.
 - Plain legal document layout sharing the global header and footer.
-
