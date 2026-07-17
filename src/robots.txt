@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://forge.adulari.dev/sitemap.xml
-

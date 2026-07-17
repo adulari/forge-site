@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Forge Docs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="assets/forge-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#0C0914"/><g fill="#FF8A30"><rect x="26" y="64" width="44" height="7" rx="2"/><path d="M38 50 L50 50 L60 64 L28 64 Z"/><path d="M36 36 L52 36 L48 52 L40 52 Z"/><rect x="22" y="24" width="44" height="14" rx="2"/><path d="M66 24 L84 29 L66 38 Z"/></g></svg></template>
+<style>
+html { scroll-behavior:smooth; }
+body { margin:0; background:#0A0812; }
+h1, h2 { font-family:'Bricolage Grotesque','Helvetica Neue',sans-serif; }
+a { color:var(--accent,#FF8A30); text-decoration:none; }
+a:hover { color:var(--accent-hi,#FFB068); }
+[data-forge-root] {
+  --bg:#0A0812; --panel:#0C0914; --panel2:#0D0A16; --panel-hot:#0E0810;
+  --border:#1E1A28; --border2:#2A2436; --border-hot:#3A2418;
+  --ink:#F2E9DC; --ink2:#D0D5E0; --muted:#A8ADC0; --muted2:#8B90A5; --dim:#52576C;
+  --accent:#FF8A30; --accent-hi:#FFB068; --code:#FFD9B8; --gold:#FFD040; --cy:#4BD4DA;
+  --warn:#EEBC52; --red:#F35C5C; --o2:#FF9828; --o3:#FF6020; --navbg:rgba(10,8,18,.85);
+}
+[data-forge-root][data-theme="light"] {
+  --bg:#F1EEE8; --panel:#FAF8F4; --panel2:#EFEAE0; --panel-hot:#F7EDE0;
+  --border:#E5E0D5; --border2:#D8D3C6; --border-hot:#E4C9A5;
+  --ink:#211F1B; --ink2:#3A362E; --muted:#57544C; --muted2:#6B675C; --dim:#8B8779;
+  --accent:#B65108; --accent-hi:#93430A; --code:#7A3E10; --gold:#8F6A00; --cy:#0E7C86;
+  --warn:#9A6E0C; --red:#C93835; --o2:#A85408; --o3:#B0400E; --navbg:rgba(246,242,235,.88);
+}
+body:has([data-theme="light"]) { background:#F1EEE8; }
+@media (max-width: 900px) {
+  [data-sidebar] { position:static !important; width:100% !important; height:auto !important; max-height:280px; border-right:none !important; border-bottom:1px solid var(--border); }
+  [data-shell] { flex-direction:column !important; }
+}
+</style>
+</helmet>
+<div data-forge-root="1" data-theme="{{ theme }}" style="font-family:'Geist','Helvetica Neue',sans-serif; background:var(--bg); color:var(--ink); min-height:100vh;">
+  <div data-screen-label="docs top bar" style="position:sticky; top:0; z-index:40; display:flex; align-items:center; gap:16px; padding:12px clamp(16px,3vw,28px); background:var(--navbg); backdrop-filter:blur(14px); border-bottom:1px solid var(--border);">
+    <a href="Forge%20Landing.dc.html" style="display:flex; align-items:center; gap:10px; color:var(--ink);">
+      <img src="assets/forge-logo.svg" alt="Forge" style="width:26px; height:26px; border-radius:6px;">
+      <span style="font-weight:700; font-size:16px;">Forge</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); border:1px solid var(--border-hot); border-radius:4px; padding:2px 7px;">docs</span>
+    </a>
+    <input placeholder="Search docs…  ( / )" value="{{ q }}" onChange="{{ setQ }}" style="flex:1; max-width:340px; margin-left:12px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:8px 14px; color:var(--ink); font-size:13.5px; font-family:'Geist',sans-serif; outline:none;">
+    <span style="flex:1;"></span>
+    <a href="Forge%20Landing.dc.html" data-navlink="1" style="color:var(--muted); font-size:13.5px;">← forge.adulari.dev</a>
+    <span title="Toggle light/dark" style="cursor:pointer; color:var(--muted2); font-size:16px; line-height:1; padding:6px 9px; border-radius:8px;" style-hover="color:var(--ink); background:rgba(255,138,48,.10);" onClick="{{ toggleTheme }}">{{ themeGlyph }}</span>
+    <a href="https://github.com/adulari/forge" style="border:1px solid var(--border2); border-radius:6px; padding:6px 12px; color:var(--ink2); font-size:12.5px; font-family:'JetBrains Mono',monospace;" style-hover="border-color:var(--accent); color:var(--accent);">★ GitHub</a>
+  </div>
+  <div data-shell="1" style="display:flex; max-width:1240px; margin:0 auto;">
+    <nav data-sidebar="1" style="position:sticky; top:57px; width:250px; flex:none; height:calc(100vh - 57px); overflow-y:auto; border-right:1px solid var(--border); padding:22px 14px 40px;">
+      <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="12">
+        <div style="font-family:{{ it.font }}; font-size:{{ it.size }}px; color:{{ it.color }}; background:{{ it.bg }}; font-weight:{{ it.weight }}; padding:{{ it.pad }}; margin-top:{{ it.mt }}px; border-radius:7px; cursor:{{ it.cursor }}; border-left:2px solid {{ it.edge }};" onClick="{{ it.pick }}">{{ it.label }}</div>
+      </sc-for>
+    </nav>
+    <main style="flex:1; min-width:0; padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px) 80px; max-width:820px;">
+
+      <div style="display:{{ secQuickstart }};" data-screen-label="quickstart">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Quickstart</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Install to first chat in about 5 minutes. No credit card, and no API key needed to try it: the <span style="font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--cy);">--mock</span> provider runs a deterministic offline model.</p>
+        <h2 style="margin:36px 0 0; font-size:20px;">1 · Install</h2>
+        <sc-for list="{{ qsInstall }}" as="c" hint-placeholder-count="1">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <p style="margin:12px 0 0; color:var(--dim); font-size:13.5px;">Verifies the SHA-256, installs to ~/.local/bin, offers the desktop app alongside. Also: Homebrew, Cargo (crate is forge-agent), PowerShell, or build from source.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">2 · Connect providers</h2>
+        <sc-for list="{{ qsSetup }}" as="c" hint-placeholder-count="2">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <p style="margin:12px 0 0; color:var(--dim); font-size:13.5px;">Keys are stored in your OS keyring, never in config files. See <span style="color:var(--accent); cursor:pointer;" onClick="{{ goFree }}">Free providers</span> for the best zero-cost setup.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">3 · Work</h2>
+        <sc-for list="{{ qsWork }}" as="c" hint-placeholder-count="3">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <div style="margin-top:28px; border:1px solid var(--border-hot); background:var(--panel-hot); border-radius:10px; padding:16px 20px; color:var(--muted); font-size:14.5px; line-height:1.6;">Zero keys? <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cy);">forge tour --demo</span> runs one full agent turn offline in a scratch directory: routing line, a tool call, the final answer.</div>
+      </div>
+
+      <div style="display:{{ secFree }};" data-screen-label="free providers">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Free providers</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Forge runs free with zero paid keys. Connect a few of these and the mesh routes across them, failing over automatically when one is throttled.</p>
+        <div style="margin-top:28px; overflow-x:auto;">
+          <div style="display:grid; grid-template-columns:110px 1.6fr 1fr 150px; min-width:640px; font-size:13.5px; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+            <div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">PROVIDER</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">BEST FREE MODELS</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">LIMITS</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">CONNECT</div>
+            <sc-for list="{{ freeRows }}" as="r" hint-placeholder-count="6">
+              <div style="display:contents;">
+                <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--ink); font-weight:600;">{{ r.name }}</div>
+                <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2); font-family:'JetBrains Mono',monospace; font-size:12.5px;">{{ r.models }}</div>
+                <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--cy); font-family:'JetBrains Mono',monospace; font-size:12.5px;">{{ r.limits }}</div>
+                <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--code); font-family:'JetBrains Mono',monospace; font-size:12.5px;">{{ r.connect }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <p style="margin:14px 0 0; color:var(--dim); font-size:13px;">Mid-2026 figures; limits shift month to month. Model catalogs are discovered live, so new free models appear automatically.</p>
+        <h2 style="margin:34px 0 0; font-size:20px;">Stack keys to multiply limits</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Run <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">forge auth &lt;provider&gt;</span> again to add another key. Forge round-robins across all of them, so two free Groq keys ≈ double the requests per minute, and a throttled key's retry lands on the next one.</p>
+        <sc-for list="{{ freeCmds }}" as="c" hint-placeholder-count="3">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <div style="margin-top:24px; border:1px solid var(--border-hot); background:var(--panel-hot); border-radius:10px; padding:16px 20px; color:var(--muted); font-size:14.5px; line-height:1.6;">A solid all-free setup: <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">groq + nvidia + gemini</span>. Fast small-task routing, 100+ frontier models, and a 1M-context model, all at $0.</div>
+      </div>
+
+      <div style="display:{{ secMesh }};" data-screen-label="mesh routing">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Mesh routing</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">You don't pick a model; you connect providers and let Forge pick. Every task is classified into a tier, then routed to the cheapest model that meets the bar, ranked against real Artificial Analysis intelligence and coding scores.</p>
+        <div style="display:grid; grid-template-columns:110px 1fr 1fr; margin-top:28px; font-size:13.5px; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+          <div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">TIER</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">EXAMPLES</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">GOES TO</div>
+          <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--gold); font-family:'JetBrains Mono',monospace;">trivial</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2);">single-line edits, simple lookups</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--ink2);">local / cheapest free model</div>
+          <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--o2); font-family:'JetBrains Mono',monospace;">standard</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2);">multi-file refactors, code review</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--ink2);">mid-tier cloud model</div>
+          <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--o3); font-family:'JetBrains Mono',monospace;">complex</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2);">architecture, deep debugging, new features</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--ink2);">frontier model</div>
+        </div>
+        <h2 style="margin:34px 0 0; font-size:20px;">Failover rules</h2>
+        <div style="margin-top:14px; display:flex; flex-direction:column; gap:12px; color:var(--muted); font-size:14.5px; line-height:1.6;">
+          <div><span style="color:var(--warn); font-family:'JetBrains Mono',monospace; font-size:13px;">429 rate limit</span> · a per-minute free-tier reset is waited out and the best model retried, not immediately downgraded.</div>
+          <div><span style="color:var(--warn); font-family:'JetBrains Mono',monospace; font-size:13px;">transient 5xx</span> · retried on the same model with bounded backoff.</div>
+          <div><span style="color:var(--red); font-family:'JetBrains Mono',monospace; font-size:13px;">permanent errors</span> · no tool support, 402 payment-required: fail over at once, down the whole ranked catalog, across providers.</div>
+        </div>
+        <h2 style="margin:34px 0 0; font-size:20px;">Budgets and conservation</h2>
+        <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.9; color:var(--ink2); background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:16px 20px; overflow-x:auto; white-space:pre;">[mesh]
+daily_budget_usd = 5.0
+monthly_cap_usd  = 50.0
+credit_mode      = "strict"   <span style="color:var(--dim);"># free + subscription only, never a paid key</span></div>
+        <p style="margin:12px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Under budget pressure, or to spare a metered plan, the mesh spreads standard and complex work onto free frontier models. Auto-downshift kicks in as caps approach.</p>
+        <h2 style="margin:34px 0 0; font-size:20px;">The /effort knob</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">low · medium · high · xhigh · white-hot. It steers the whole route, not just a provider's reasoning parameter: higher effort biases toward stronger-benchmarked models only when the score gap is real. White-hot adds automatic workflow-script orchestration on top of maximum reasoning.</p>
+        <sc-for list="{{ meshCmds }}" as="c" hint-placeholder-count="2">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+      </div>
+
+      <div style="display:{{ secBench }};" data-screen-label="benchmarks">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Benchmarks</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">The honest test of a harness: run the same model through Forge and through the raw vendor CLI, and let the official evaluator score both. The harness is the only variable.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Method</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">SWE-bench Lite (real GitHub bug fixes). The same <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">claude sonnet</span> runs through Forge's bridge vs. the raw claude CLI, scored by the official swebench Docker evaluator.</p>
+        <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; margin-top:24px; font-size:14px; border:1px solid var(--border); border-radius:10px; overflow:hidden; max-width:560px;">
+          <div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">SAME SONNET MODEL</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">BUGS FIXED</div><div style="padding:12px 16px; background:var(--panel2); color:var(--dim); font-family:'JetBrains Mono',monospace; font-size:11px;">TOKENS / FIX</div>
+          <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2);">raw claude CLI</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2); font-family:'JetBrains Mono',monospace;">4 / 10</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--muted2); font-family:'JetBrains Mono',monospace;">3.57M</div>
+          <div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--ink); font-weight:600;">through Forge</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--accent); font-family:'JetBrains Mono',monospace; font-weight:700;">6 / 10</div><div style="padding:12px 16px; border-top:1px solid var(--border); color:var(--accent); font-family:'JetBrains Mono',monospace; font-weight:700;">2.83M</div>
+        </div>
+        <p style="margin:16px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Forge strictly dominates: every bug the raw CLI fixed, Forge also fixed, plus two more, zero the other way, at ~21% lower token cost per fix. The larger N=20 run holds the same direction (11 vs 9). Total tokens are at parity: Forge does more work because it solves more.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Why the gap exists</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Real models loop, write tool calls as prose that never execute, and claim "done" without checking. Forge's loop gates completion on tool-grounded evidence, recovers orphaned tool calls, and guards against doom loops; 324 conformance tests pin those behaviors.</p>
+        <sc-for list="{{ benchCmds }}" as="c" hint-placeholder-count="1">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:18px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <p style="margin:14px 0 0; color:var(--dim); font-size:13px;">Full method, the larger-N run, and an explicit "where Forge does not win yet" section: <a href="https://github.com/adulari/forge/blob/main/docs/harness/why-forge-is-a-better-harness.md">why-forge-is-a-better-harness.md</a></p>
+      </div>
+
+      <div style="display:{{ secBridge }};" data-screen-label="subscription bridges">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Subscriptions &amp; OAuth</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Run the plan you already pay for through Forge and get mesh routing, failover, and the reliability layer on top. No other agent does this.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Two ways in</h2>
+        <div style="margin-top:16px; display:grid; grid-template-columns:max-content 1fr; gap:14px 22px; font-size:14.5px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); white-space:nowrap;">native OAuth</span>
+          <span style="color:var(--muted); line-height:1.6;">Codex (paste-redirect or RFC 8628 device flow) and Grok / xAI. Fully headless, state + PKCE verified, tokens in the OS keyring. Native model use, no CLI in the loop.</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--warn); white-space:nowrap;">CLI bridge</span>
+          <span style="color:var(--muted); line-height:1.6;">Claude Code and Antigravity ban third-party OAuth credential use, so Forge drives their official CLI instead. Your plan still gets routing, conservation, and the completion gate.</span>
+        </div>
+        <sc-for list="{{ bridgeCmds }}" as="c" hint-placeholder-count="3">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <h2 style="margin:32px 0 0; font-size:20px;">How it works</h2>
+        <div style="margin-top:14px; display:flex; flex-direction:column; gap:12px; color:var(--muted); font-size:14.5px; line-height:1.6;">
+          <div>A persistent bridge transport keeps Claude re-drives warm; CLIs without that support fall back to a safe one-process-per-turn path that never double-executes tools.</div>
+          <div>Headless OAuth for Codex (paste-redirect or device flow) and xAI, with PKCE verification. Secrets live in the OS keyring.</div>
+          <div>Subscription conservation spreads trivial and standard work onto free models so your metered quota is spent only where it matters. <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">credit_mode = "strict"</span> keeps routing free + subscription only.</div>
+        </div>
+        <div style="margin-top:24px; border:1px solid var(--border-hot); background:var(--panel-hot); border-radius:10px; padding:16px 20px; color:var(--muted); font-size:14.5px; line-height:1.6;">Proof this works: the same sonnet fixes 50% more SWE-bench bugs through Forge than through the raw CLI. See <span style="color:var(--accent); cursor:pointer;" onClick="{{ goBench }}">Benchmarks</span>.</div>
+      </div>
+
+      <div style="display:{{ secTui }};" data-screen-label="tui and commands">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">The TUI &amp; commands</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Full-screen by default: scrollable transcript, pinned panels, live progress, cost meter, context gauge. Use <span style="font-family:'JetBrains Mono',monospace; font-size:14px;">--inline</span> for native scrollback, <span style="font-family:'JetBrains Mono',monospace; font-size:14px;">--plain</span> for CI.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Essential slash commands</h2>
+        <div style="margin-top:16px; display:grid; grid-template-columns:max-content 1fr; gap:10px 22px; font-size:14px;">
+          <sc-for list="{{ slashRows }}" as="r" hint-placeholder-count="12">
+            <div style="display:contents;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cy); white-space:nowrap;">{{ r.cmd }}</span>
+              <span style="color:var(--muted2); line-height:1.55;">{{ r.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <h2 style="margin:34px 0 0; font-size:20px;">Keyboard</h2>
+        <div style="margin-top:16px; display:grid; grid-template-columns:max-content 1fr; gap:10px 22px; font-size:14px;">
+          <sc-for list="{{ keyRows }}" as="r" hint-placeholder-count="8">
+            <div style="display:contents;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code); white-space:nowrap;">{{ r.cmd }}</span>
+              <span style="color:var(--muted2); line-height:1.55;">{{ r.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <h2 style="margin:34px 0 0; font-size:20px;">Statusline</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">A row of widgets you can add, remove, or reorder live with <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">/statusline</span>, including shell-backed custom widgets on a refresh interval.</p>
+        <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.9; color:var(--ink2); background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:16px 20px; overflow-x:auto; white-space:pre;">[statusline]
+left  = ["model", "session_cost", "effort", "mode"]
+right = ["git_branch", "repo_name", "quota_claude", "mcp_status"]</div>
+      </div>
+
+      <div style="display:{{ secAuto }};" data-screen-label="workflows and automation">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Workflows &amp; automation</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Fan work out, race models against each other, and let Forge work while you sleep.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">/workflow · scripted orchestration</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Sandboxed JS scripts compose <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">agent()</span>, <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">parallel()</span>, and <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">pipeline()</span> into phases of mesh-routed agents, rendered live in a dedicated animated dashboard. Save scripts and re-run them by name.</p>
+        <h2 style="margin:30px 0 0; font-size:20px;">/duel · the arena</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Race up to 3 distinct-provider models on the same task in parallel git worktrees, review, merge the winner. Recorded wins feed back into routing: <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">forge scoreboard</span> shows what your repo has taught the router.</p>
+        <h2 style="margin:30px 0 0; font-size:20px;">forge queue · overnight autopilot</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Queue tasks by day; drain them headless overnight, each in an isolated worktree, killed at its budget cap and optionally assay-gated. Wake up to review-ready autopilot branches and a morning digest.</p>
+        <sc-for list="{{ autoCmds }}" as="c" hint-placeholder-count="5">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <div style="margin-top:24px; border:1px solid var(--border-hot); background:var(--panel-hot); border-radius:10px; padding:16px 20px; color:var(--muted); font-size:14.5px; line-height:1.6;"><span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">forge schedule</span> registers recurring headless runs on native OS timers (systemd, launchd, Task Scheduler); point one at <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">forge queue run</span> for a nightly drain. Assay adds a parallel adversarial critic crew with a CI gate (<span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">forge assay run --scope diff --fail-on high</span>).</div>
+      </div>
+
+      <div style="display:{{ secIntel }};" data-screen-label="code intelligence">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Code intelligence</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Context that's earned, not dumped: a queryable code graph, durable per-project memory, and per-line provenance for everything the agent writes.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Lattice · the code graph</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">A tree-sitter symbol graph across 9 languages with blast radius, call chains, and semantic embeddings, auto-injected before each turn and incremental by content hash.</p>
+        <sc-for list="{{ latCmds }}" as="c" hint-placeholder-count="4">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <h2 style="margin:32px 0 0; font-size:20px;">Memory</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Typed, durable facts per project, auto-captured at turn end and relevance-ranked back into context next session: only the relevant ones, not a dump. <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">/remember</span>, <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">/memories</span>, <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">forge memory add "use 4-space indent" --kind decision</span>.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Provenance · blame, replay, fork</h2>
+        <sc-for list="{{ provCmds }}" as="c" hint-placeholder-count="4">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+      </div>
+
+      <div style="display:{{ secApps }};" data-screen-label="apps and remote">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Apps &amp; remote control</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Every surface drives the same sessions, permissions, plans, and audit trail: terminal, desktop app, phone, or any OpenAI SDK.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">forge serve · the fleet daemon</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">One headless process, any number of sessions, all driveable from a phone or browser at a stable origin (default port 7420). Sessions survive disconnects; reconnects replay what you missed. Push notifications carry Allow/Deny actions you can answer from the lock screen.</p>
+        <sc-for list="{{ appCmds }}" as="c" hint-placeholder-count="4">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:13.5px; background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:12px 18px; margin-top:10px;"><span style="color:var(--accent);">$</span><span style="color:var(--code); flex:1; overflow-x:auto; white-space:pre;">{{ c.cmd }}</span><span style="color:var(--dim); font-size:12px;">{{ c.note }}</span><span style="color:var(--muted2); cursor:pointer;" onClick="{{ c.pick }}">{{ c.label }}</span></div>
+        </sc-for>
+        <h2 style="margin:32px 0 0; font-size:20px;">Desktop &amp; mobile</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">The Tauri desktop app auto-discovers your Forge install and checks signed updates. The companion app (one TypeScript codebase for iOS, Android, Web, Windows, macOS, Linux) ships fleet, inbox, plans, review, replay, usage, models, and configuration as native screens, plus voice capture and iOS Live Activities. Fastest mobile install: open the forge serve URL and Add to Home Screen.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">forge api · OpenAI-compatible server</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Point any OpenAI SDK at <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">http://127.0.0.1:8787/v1</span> and use model <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">auto</span> to route each request through the mesh: streaming, tool calls, JSON schemas, and routing/cost metadata included.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">MCP &amp; skills</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">MCP client (stdio + HTTP/SSE, OAuth) and MCP server in one. Skills and commands are Claude Code format compatible: <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">forge import claude</span> migrates your existing setup, <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">forge skill install owner/repo</span> pulls from GitHub, and <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">forge migrate</span> packs a whole install to move machines.</p>
+      </div>
+
+      <div style="display:{{ secSafety }};" data-screen-label="safety and config">
+        <h1 style="margin:0; font-size:34px; letter-spacing:-0.02em;">Safety &amp; configuration</h1>
+        <p style="margin:14px 0 0; color:var(--muted); font-size:16px; line-height:1.65; max-width:640px;">Explicit, reviewable, and reversible. Every tool call, routing decision, and permission outcome lands in the audit trail.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">The four tempers</h2>
+        <div style="margin-top:16px; display:grid; grid-template-columns:max-content 1fr; gap:10px 22px; font-size:14px;">
+          <sc-for list="{{ temperRows }}" as="r" hint-placeholder-count="4">
+            <div style="display:contents;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); white-space:nowrap;">{{ r.cmd }}</span>
+              <span style="color:var(--muted2); line-height:1.55;">{{ r.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="margin:16px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">An unoverridable denylist blocks catastrophic ops (rm -rf /, .env reads, pipe-to-sh) in every temper. Diff preview before every write, shadow snapshots, <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">/undo</span> with file restore, per-turn checkpoints, and optional Linux Landlock confinement.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Config layers</h2>
+        <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.9; color:var(--ink2); background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:16px 20px; overflow-x:auto; white-space:pre;">~/.config/forge/config.toml   <span style="color:var(--dim);"># user</span>
+./.forge/config.toml          <span style="color:var(--dim);"># project</span>
+./.forge/AGENTS.md            <span style="color:var(--dim);"># project memory (/init writes it)</span>
+FORGE_*                       <span style="color:var(--dim);"># env override</span>
+OS keyring                    <span style="color:var(--dim);"># API keys (forge auth)</span></div>
+        <p style="margin:12px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Everything is editable in-app with <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">/config</span>: fuzzy-search any setting, permission rules, keybinds, hooks, statusline. Changes validate and persist.</p>
+        <h2 style="margin:32px 0 0; font-size:20px;">Telemetry</h2>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14.5px; line-height:1.6; max-width:640px;">Anonymous counters only: no prompts, responses, file contents, paths, repo names, keys, or stable identifiers. It never blocks Forge, and one line disables it everywhere:</p>
+        <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.9; color:var(--ink2); background:var(--panel); border:1px solid var(--border2); border-radius:8px; padding:16px 20px; white-space:pre;">[telemetry]
+enabled = false</div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; gap:16px; margin-top:56px; border-top:1px solid var(--border); padding-top:22px;">
+        <span style="color:{{ prevColor }}; cursor:pointer; font-size:14.5px;" onClick="{{ goPrev }}">{{ prevLabel }}</span>
+        <span style="color:var(--accent); cursor:pointer; font-size:14.5px; text-align:right;" onClick="{{ goNext }}">{{ nextLabel }}</span>
+      </div>
+    </main>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sec: 'quickstart', q: '', copied: '', theme: 'dark' };
+  componentDidMount() {
+    try { if (localStorage.getItem('forge-theme') === 'light') this.setState({ theme: 'light' }); } catch (e) {}
+    const h = (location.hash || '').replace('#', '');
+    if (this.SECTIONS.some(s => s.id === h)) this.setState({ sec: h });
+    this._kd = (e) => {
+      if (e.key === '/' && document.activeElement && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        const inp = document.querySelector('input');
+        if (inp) inp.focus();
+      }
+    };
+    window.addEventListener('keydown', this._kd);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._kd); clearTimeout(this._c); }
+  SECTIONS = [
+    { id: 'quickstart', label: 'Quickstart', group: 'Getting started', kw: 'install curl setup chat mock tour' },
+    { id: 'free', label: 'Free providers', group: 'Getting started', kw: 'groq nvidia cerebras gemini keys $0 stack round-robin' },
+    { id: 'mesh', label: 'Mesh routing', group: 'The Mesh', kw: 'tiers failover budget credit strict effort white-hot 429' },
+    { id: 'bench', label: 'Benchmarks', group: 'The Mesh', kw: 'swe-bench proof harness sonnet 50% tokens' },
+    { id: 'bridge', label: 'Subscriptions & OAuth', group: 'The Mesh', kw: 'claude codex antigravity grok xai max pro plan oauth pkce device flow bridge conserve' },
+    { id: 'tui', label: 'TUI & commands', group: 'Using Forge', kw: 'slash keyboard shortcuts statusline plan execute compact' },
+    { id: 'auto', label: 'Workflows & automation', group: 'Using Forge', kw: 'workflow duel queue schedule assay loop goal autopilot' },
+    { id: 'intel', label: 'Code intelligence', group: 'Using Forge', kw: 'lattice memory blame replay fork provenance graph' },
+    { id: 'apps', label: 'Apps & remote', group: 'Platform', kw: 'serve desktop mobile pwa push api openai mcp skills migrate' },
+    { id: 'safety', label: 'Safety & config', group: 'Platform', kw: 'permissions tempers denylist undo config toml telemetry landlock' },
+  ];
+  mk(list) {
+    return list.map(([cmd, note]) => ({
+      cmd, note,
+      label: this.state.copied === cmd ? '✓' : '⧉',
+      pick: () => {
+        navigator.clipboard && navigator.clipboard.writeText(cmd);
+        this.setState({ copied: cmd });
+        clearTimeout(this._c);
+        this._c = setTimeout(() => this.setState({ copied: '' }), 1800);
+      },
+    }));
+  }
+  go(id) { location.hash = id; this.setState({ sec: id }); const m = document.querySelector('main'); if (m) m.parentElement.parentElement.scrollTop = 0; window.scrollTo(0, 0); }
+  renderVals() {
+    const st = this.state;
+    const q = st.q.trim().toLowerCase();
+    const filtered = this.SECTIONS.filter(s => !q || (s.label + ' ' + s.kw).toLowerCase().includes(q));
+    const navItems = [];
+    let lastGroup = '';
+    filtered.forEach(s => {
+      if (s.group !== lastGroup) {
+        lastGroup = s.group;
+        navItems.push({ label: s.group, kind: 'h', font: "'JetBrains Mono',monospace", size: 10.5, color: 'var(--dim)', bg: 'transparent', weight: 700, pad: '4px 12px', mt: navItems.length ? 22 : 0, cursor: 'default', edge: 'transparent', pick: () => {} });
+      }
+      const active = st.sec === s.id;
+      navItems.push({
+        label: s.label, kind: 'i',
+        font: "'Geist',sans-serif", size: 14,
+        color: active ? 'var(--accent)' : 'var(--muted)',
+        bg: active ? 'rgba(255,138,48,.10)' : 'transparent',
+        weight: active ? 600 : 400,
+        pad: '8px 12px', mt: 2, cursor: 'pointer',
+        edge: active ? 'var(--accent)' : 'transparent',
+        pick: () => this.go(s.id),
+      });
+    });
+    const secVals = {};
+    this.SECTIONS.forEach(s => { secVals['sec' + s.id.charAt(0).toUpperCase() + s.id.slice(1)] = st.sec === s.id ? 'block' : 'none'; });
+    const idx = this.SECTIONS.findIndex(s => s.id === st.sec);
+    const prev = this.SECTIONS[idx - 1], next = this.SECTIONS[idx + 1];
+    return {
+      q: st.q,
+      setQ: (e) => this.setState({ q: e.target.value }),
+      theme: st.theme,
+      themeGlyph: st.theme === 'light' ? '☾' : '☀',
+      toggleTheme: () => {
+        const t = st.theme === 'light' ? 'dark' : 'light';
+        try { localStorage.setItem('forge-theme', t); } catch (e) {}
+        this.setState({ theme: t });
+      },
+      navItems,
+      ...secVals,
+      goFree: () => this.go('free'),
+      goBench: () => this.go('bench'),
+      goPrev: () => prev && this.go(prev.id),
+      goNext: () => next && this.go(next.id),
+      prevLabel: prev ? '← ' + prev.label : '',
+      nextLabel: next ? next.label + ' →' : '',
+      prevColor: prev ? 'var(--accent)' : 'transparent',
+      qsInstall: this.mk([['curl -fsSL forge.adulari.dev/install.sh | sh', 'linux · macos']]),
+      qsSetup: this.mk([
+        ['forge setup', 'guided: keys + plans + local LLM'],
+        ['forge auth groq', 'or add any key directly'],
+      ]),
+      qsWork: this.mk([
+        ['forge chat', 'full-screen TUI'],
+        ['forge run "add pagination to the user list"', 'one-shot task'],
+        ['forge models', 'catalog + auto-pick per tier'],
+        ['forge tour --demo', 'zero keys, offline'],
+      ]),
+      freeRows: [
+        { name: 'Groq', models: 'llama-3.3-70b · qwen3-32b · gpt-oss-120b', limits: '30 RPM · 1K/day', connect: 'forge auth groq' },
+        { name: 'NVIDIA', models: 'deepseek-r1 · llama-405b · 100+ models', limits: '40 RPM', connect: 'forge auth nvidia' },
+        { name: 'Cerebras', models: 'qwen-3-coder-480b · gpt-oss-120b', limits: '30 RPM · 14.4K/day', connect: 'forge auth cerebras' },
+        { name: 'Gemini', models: 'gemini flash (1M context) · gemma', limits: '15 RPM · 1.5K/day', connect: 'forge auth gemini' },
+        { name: 'SambaNova', models: 'deepseek-v3.1 · llama-4 maverick', limits: '20 RPM', connect: 'forge auth sambanova' },
+        { name: 'Mistral', models: 'mistral large 3 · codestral', limits: '1 RPS · 500K TPM', connect: 'forge auth mistral' },
+        { name: 'OpenRouter', models: 'rotating :free frontier models', limits: '20 RPM · 200/day', connect: 'forge auth openrouter' },
+        { name: 'Cohere', models: 'command A (218B) · command R+', limits: '20 RPM · 1K/mo', connect: 'forge auth cohere' },
+      ],
+      freeCmds: this.mk([
+        ['forge auth groq', 'add a key'],
+        ['forge auth groq', 'again: Forge rotates across both'],
+        ['forge auth groq --list', 'masked key overview'],
+      ]),
+      meshCmds: this.mk([
+        ['forge mesh "add OpenTelemetry tracing"', 'explain how a task would route'],
+        ['forge models --probe', 'live health-check the catalog'],
+      ]),
+      benchCmds: this.mk([['forge bench swe', 'reproduce with the official evaluator']]),
+      bridgeCmds: this.mk([
+        ['forge auth codex', 'native OAuth: paste-redirect or device flow'],
+        ['forge auth xai', 'native OAuth: Grok, PKCE-verified'],
+        ['forge run --model claude-cli::sonnet "fix the flaky auth test"', 'Claude plan via the CLI bridge'],
+        ['forge doctor', 'verify bridges + providers'],
+      ]),
+      slashRows: [
+        { cmd: '/plan · /execute', desc: 'investigate read-only, propose a plan, then approve and run it' },
+        { cmd: '/orchestrate', desc: 'route a task through skills, subagents, MCP, web, Lattice, or direct' },
+        { cmd: '/workflow', desc: 'author or run a saved orchestration script' },
+        { cmd: '/duel', desc: 'race models in parallel worktrees, merge the winner' },
+        { cmd: '/mesh · /usage', desc: 'routing inspector · spend and token usage' },
+        { cmd: '/model · /effort · /mode', desc: 'pin a model · set the route knob · switch temper' },
+        { cmd: '/undo · /checkpoint', desc: 'revert last turn · save and rewind session state' },
+        { cmd: '/compact', desc: 'summarize older context (auto-triggers at 80% gauge)' },
+        { cmd: '/remember · /memories', desc: 'save a durable fact · list what Forge knows' },
+        { cmd: '/voice', desc: 'local Whisper dictation into the draft, never auto-sends' },
+        { cmd: '/pr', desc: 'branch + commit + open a PR with a provenance-rich body' },
+        { cmd: '/remote', desc: 'drive this session from a phone or browser' },
+        { cmd: '/config · /statusline', desc: 'edit any setting live · customize the status row' },
+        { cmd: '/', desc: 'fuzzy command palette over commands and skills' },
+      ],
+      keyRows: [
+        { cmd: 'Shift+Tab', desc: 'cycle temper (Read-only → Ask → Auto-edit → Full)' },
+        { cmd: 'Ctrl+K', desc: 'mid-turn: abort + retry the same prompt on the next-ranked model' },
+        { cmd: 'Ctrl+↑ / Ctrl+↓', desc: 'bias the routing tier up or down, re-running if mid-turn' },
+        { cmd: 'Ctrl+O', desc: 'activity viewer: main chat + subagents + critics' },
+        { cmd: 'y / n / a', desc: 'allow, deny, or always-allow a permission prompt' },
+        { cmd: 'Alt+M · Alt+E', desc: 'model picker · cycle effort' },
+        { cmd: 'Ctrl+Z · Ctrl+S', desc: 'undo last write · checkpoint' },
+        { cmd: 'F1', desc: 'full keybind reference (editable with Ctrl+,)' },
+      ],
+      autoCmds: this.mk([
+        ['/workflow run nightly-refactor', 'run a saved script (in chat)'],
+        ['/duel add pagination to the /users endpoint', 'race 3 models (in chat)'],
+        ['forge queue add "migrate the auth module" --budget 2.50', 'queue with a cost cap'],
+        ['forge queue run --gate high', 'drain: isolated worktree per task'],
+        ['forge schedule add "weekly deps audit" --cron "Mon 08:00"', 'native OS timer'],
+        ['forge scoreboard', 'per-repo model wins + routing boost'],
+      ]),
+      latCmds: this.mk([
+        ['forge lattice update .', 'index, incremental by content hash'],
+        ['forge lattice impact "UserRepository"', 'blast radius: what depends on it'],
+        ['forge lattice path "main" "persist"', 'shortest call chain A → B'],
+        ['forge lattice why "authenticate"', 'git provenance: who last changed it'],
+      ]),
+      provCmds: this.mk([
+        ['forge blame src/auth.rs --line 42', 'which model, session, prompt wrote it'],
+        ['forge replay abc123 def456', 'aligned turn-by-turn session diff'],
+        ['forge fork abc123 --turn 2 --rerun', 'hold prefix fixed, re-ask one turn'],
+        ['forge tree', 'fork families and lineage'],
+      ]),
+      appCmds: this.mk([
+        ['forge serve', 'LAN daemon + QR pairing'],
+        ['forge serve --anywhere', 'public tunnel via cloudflared/ngrok'],
+        ['forge service install --local', 'start at login, restart on failure'],
+        ['forge api --port 8787', 'OpenAI-compatible /v1 behind the mesh'],
+      ]),
+      temperRows: [
+        { cmd: 'Read-only', desc: 'investigate only; no writes, no shell' },
+        { cmd: 'Ask', desc: 'every write and command prompts (the default)' },
+        { cmd: 'Auto-edit', desc: 'file writes and shell auto-approved; the denylist still blocks catastrophic ops' },
+        { cmd: 'Full', desc: 'no prompts; for isolated worktrees and CI' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
