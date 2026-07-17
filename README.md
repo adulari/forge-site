@@ -10,7 +10,14 @@ Design project: https://claude.ai/design/p/eeae8c8b-31e0-47cd-a38d-c1bb96c7de90
 
 ## Forge Anywhere design
 
-Forge Anywhere UI must be designed in Claude Design, starting from the existing Forge project and visual language. The complete brief is [design-prompts/forge-anywhere-claude-design.md](design-prompts/forge-anywhere-claude-design.md). Do not hand-build or independently restyle these surfaces before the approved Claude Design export is committed.
+Forge Anywhere marketing must be designed in the existing website Claude Design project. The
+website-only brief is
+[design-prompts/forge-anywhere-claude-design.md](design-prompts/forge-anywhere-claude-design.md).
+Authenticated Anywhere UI belongs in the existing Forge app Claude Design project and Emberline
+app shell; its separate extension brief lives at
+`mobile/redesign/FORGE_ANYWHERE_CLAUDE_DESIGN_PROMPT.md` in the Forge repository. Never create a
+second app or independently restyle either surface before the relevant Claude Design export is
+approved.
 
 ## Deploy
 

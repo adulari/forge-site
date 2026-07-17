@@ -1,52 +1,68 @@
-# Claude Design brief: Forge Anywhere
+# Claude Design brief: Forge Anywhere marketing
 
-Use this brief in the existing Forge Claude Design project:
+> **Website project only.** Run this brief in the existing Forge website Claude Design project:
+> https://claude.ai/design/p/eeae8c8b-31e0-47cd-a38d-c1bb96c7de90
+>
+> Do not design an authenticated Forge app, app shell, dashboard, host manager, session interface,
+> mobile app, desktop app, or web app in this project. The Forge application already has a
+> separate completed Claude Design project and implemented Emberline design system. Authenticated
+> Anywhere UX must extend that project using the separate app brief in
+> `mobile/redesign/FORGE_ANYWHERE_CLAUDE_DESIGN_PROMPT.md` in the Forge repository.
 
-https://claude.ai/design/p/eeae8c8b-31e0-47cd-a38d-c1bb96c7de90
+## Objective
 
-This is the complete product-design scope for Forge Anywhere. Treat the existing Forge website and app as the visual source of truth. Design the new work in Claude Design before any new Forge Anywhere UI is exported or implemented.
+Extend the existing Forge product website with the public marketing experience for Forge Anywhere.
+Preserve the current website as the visual and structural source of truth. Add a restrained homepage
+entry point and a complete `/anywhere` page without redesigning Forge or creating a second product
+identity.
 
-## Your role
-
-Act as the lead product designer for Forge Anywhere. Produce a coherent, implementation-ready system covering:
-
-1. The public Forge Anywhere marketing experience inside the existing Forge website.
-2. The authenticated Forge Anywhere web and mobile application flows.
-3. Every important loading, empty, offline, error, destructive, entitlement, security, and recovery state.
-
-The result should feel like a native expansion of Forge, not a separate SaaS template. Preserve the existing Forge identity and improve only what is necessary to make Anywhere understandable, trustworthy, and easy to operate.
-
-## Non-negotiable source of truth
-
-- Start from the existing Forge Claude Design project and its current landing/docs canvases.
-- Preserve the current information hierarchy, Forge mark, orange/cream/near-black palette, typography, terminal/workshop character, navigation language, light/dark behavior, responsive behavior, and motion character.
-- The existing public homepage remains a Forge homepage. Do not redesign or replace it with an Anywhere homepage.
-- Add Forge Anywhere on top of the existing site through one restrained homepage callout, a navigation entry, and a dedicated `/anywhere` experience.
-- For authenticated product screens, preserve the existing Forge mobile/web app structure, session controls, and components. Anywhere should extend the product rather than create a second app shell.
-- Do not use the discarded hand-built `forge-site` redesign as a reference.
-- Do not invent product capabilities, prices, quotas, legal promises, security guarantees, or team features beyond this brief.
-- Legal copy is not part of this design pass. Reserve sensible footer/settings locations for privacy, terms, and refunds, but do not write or design full legal documents yet.
-
-## Product contract
-
-Forge is free and open-source. Local use, local history, loopback/LAN access, direct device pairing, and user-managed `forge serve --anywhere` tunnels remain free.
-
-Forge Anywhere is the optional paid, end-to-end encrypted companion for individual developers. Its positioning is:
+Forge Anywhere is the optional paid, end-to-end encrypted companion to free, open-source Forge. Its
+positioning is:
 
 > Leave your desk without leaving your Forge session.
 
-The public launch headline is:
+The launch headline is:
 
 > Your Forge sessions, everywhere.
 
-Forge Anywhere provides:
+## Non-negotiable boundaries
 
-- A managed encrypted relay and stable host identity.
-- A personal fleet of up to three active hosts.
+- Start from the current landing and docs canvases in this Claude Design project.
+- Preserve the current Forge mark, navigation, typography, orange/cream/near-black palette,
+  terminal/workshop character, theme behavior, spacing language, responsive behavior, and motion
+  character.
+- The homepage remains a Forge homepage. Do not turn it into an Anywhere homepage.
+- Do not alter the existing Forge app design. Any product UI shown in a marketing demonstration must
+  use approved screenshots/exports from the separate Forge app Claude Design project.
+- If approved app screens are unavailable, use clearly labeled neutral placeholders. Do not invent
+  a parallel app shell or speculative controls.
+- Do not create sign-in, onboarding, billing, settings, host, device, storage, history, handoff, or
+  session-management screens in this website project.
+- Do not create a second visual system, component library, or mobile application.
+- Do not use the discarded hand-built `forge-site` redesign as a reference.
+- Legal pages and final legal copy are out of scope for this pass. Reserve existing footer locations
+  for future privacy, terms, and refund links without writing those documents.
+- Do not invent capabilities, prices, quotas, security promises, or team features.
+
+## Product contract
+
+Forge remains free and open-source. These remain free:
+
+- Forge CLI, TUI, daemon, and local session history.
+- Loopback and LAN access.
+- Direct device pairing.
+- User-managed `forge serve --anywhere` tunnels.
+- User-managed networking and storage.
+- Local workspace export/import.
+
+Forge Anywhere adds:
+
+- Managed encrypted relay and stable host identity.
+- Up to three active hosts in a personal fleet.
 - Unlimited personal controller devices.
-- 5 GB of encrypted cloud sync/history.
-- Remote jobs for enrolled hosts.
-- Generic push notifications that never contain workspace content.
+- 5 GB encrypted cloud sync/history.
+- Remote jobs.
+- Generic push notifications with no workspace content.
 - Safe workspace handoff between hosts.
 - End-to-end encrypted replay links with expiry and revocation.
 
@@ -54,580 +70,222 @@ Commercial facts:
 
 - EUR 10 per month.
 - EUR 79 per year.
-- Show monthly and annual pricing together.
-- Annual is selected by default.
+- Show both prices together; annual is selected by default.
 - 14-day trial without a card.
-- The trial starts when the first host connects, not when the user merely visits or signs in.
+- The trial starts only when the first host connects.
 - One trial per GitHub account.
-- Billing is handled by Paddle.
-- No permanent hosted free tier, lifetime deal, advertising, model hosting, or AI-provider markup.
-- V1 is personal-only. Do not design teams, organizations, shared administration, roles, or enterprise controls.
+- Paddle handles billing.
+- No permanent hosted free tier, lifetime deal, advertising, model hosting, or provider markup.
+- V1 is for individual developers only. Do not market teams or organizations.
 
-Limits:
+Hard limits:
 
 - Three active hosts.
 - Unlimited personal controller devices.
-- 5 GB encrypted cloud storage.
+- 5 GB encrypted storage.
 - Workspace capsules up to 100 MB compressed.
-- Individual files over 25 MB are rejected from handoff capsules.
-- Replay shares can expire after 24 hours, 7 days, or 30 days; 30 days is the maximum.
+- Replay-share expiry choices of 24 hours, 7 days, or 30 days.
 
 Core trust statement:
 
 > Forge stays open source and free. Anywhere is optional and end-to-end encrypted.
 
-Local Forge must visibly remain usable when Anywhere is disabled, unreachable, expired, suspended, over quota, or unpaid.
+Local Forge remains usable when Anywhere is disabled, unreachable, expired, suspended, over quota,
+or unpaid.
 
-## Audiences and jobs to be done
+## Audience and marketing job
 
-Primary audience: an individual developer already using Forge locally, often across a desktop, laptop, iPhone, and browser.
+The audience is an individual developer who already uses or is evaluating Forge and wants to work
+across a desktop, laptop, iPhone, and browser.
 
-They need to:
+The page must let them understand quickly:
 
-- Understand in seconds what Anywhere adds and what remains free.
-- Start a no-card trial with GitHub.
-- Enroll a first host without wondering whether the trial has already started.
-- Securely bootstrap encryption and record a recovery phrase.
-- Pair additional personal devices with confidence.
-- See which hosts are online, offline, busy, or unavailable.
-- Continue controlling a live Forge session away from the original machine.
-- Browse encrypted synced history while offline.
-- Queue work for a remote host.
-- Move an idle session and its complete safe workspace between machines.
-- Share a read-only encrypted replay with a clear expiry.
-- Diagnose sync, relay, quota, entitlement, and recovery problems.
-- Revoke a lost device without creating ambiguity about key rotation.
-- Download/export/delete their data and manage billing.
+- What Anywhere adds.
+- What remains free.
+- How desktop → iPhone → laptop continuity works.
+- Why the relay and storage cannot read plaintext workspace content.
+- Why recovery words matter.
+- When the trial begins.
+- What the subscription costs and includes.
+- What happens after cancellation, payment failure, or service unavailability.
 
 ## Design character
 
-Use the current Forge design project as the authority. The desired qualities are:
+Use the current Forge website project as authority. The result should feel:
 
 - Mechanical, candid, energetic, and technically precise.
-- A trusted workshop instrument rather than a glossy corporate dashboard.
-- Forge orange for action and heat; warm cream and near-black work surfaces for contrast.
-- Product demonstrations and real stateful interfaces instead of abstract cloud illustrations.
-- Specific security and operational language instead of vague shield imagery or claims such as “military-grade.”
-- Dense enough for developers, but calm enough to scan under pressure.
+- Like a trusted workshop instrument, not a generic SaaS dashboard.
+- Product-led: real approved interface imagery and terminal/device continuity instead of abstract
+  cloud illustrations.
+- Specific about trust and operational boundaries rather than relying on shield graphics or vague
+  claims.
 
 Avoid:
 
-- Generic blue/purple SaaS gradients.
+- Generic blue or purple SaaS gradients.
 - Glassmorphism and decorative card grids.
 - Stock developer photography.
-- Oversized cloud/network diagrams as hero art.
+- Oversized cloud/network diagrams.
 - Hidden pricing or an ambiguous free/paid boundary.
-- Celebration that trivializes recovery keys, device revocation, deletion, or handoff risk.
-- Treating offline status as an error when local Forge is still available.
+- “Military-grade,” “unhackable,” “sync everything,” or “zero knowledge.”
+- Marketing Anywhere as a replacement for local Forge, Git, or independent backups.
 
-## Deliverable structure
-
-Create four clearly named canvas groups in the existing project:
-
-1. `Forge Anywhere — Marketing`
-2. `Forge Anywhere — App · Desktop/Web`
-3. `Forge Anywhere — App · Mobile`
-4. `Forge Anywhere — Components & States`
-
-For every major flow, provide:
-
-- A polished desktop/web frame.
-- A polished mobile frame where the flow is available on mobile.
-- Intermediate and failure states, not just happy-path endpoints.
-- Implementation notes for interaction, validation, responsive changes, and accessibility.
-- Reusable components and named variants rather than one-off duplicated frames.
-
-Use realistic product copy from this brief. Do not use lorem ipsum.
-
-## Public marketing scope
-
-### Existing Forge homepage additions
+## Existing homepage additions
 
 Keep the current homepage composition intact. Add only:
 
-- `Anywhere` to the existing navigation without crowding or restructuring it.
-- One clearly secondary homepage section showing the three-part story: begin on desktop, respond from iPhone, hand the complete workspace to a laptop.
-- The trust statement and a link to `/anywhere`.
-- A single homepage CTA for Anywhere. It must not replace the primary open-source Forge installation/GitHub path.
+1. `Anywhere` to the existing navigation without restructuring it.
+2. One visually secondary homepage section showing the three-part story:
+   - Start work on desktop.
+   - Respond from iPhone.
+   - Hand the complete safe workspace to a laptop.
+3. The trust statement.
+4. One link to `/anywhere`.
+5. One homepage Anywhere CTA that does not replace the primary open-source installation/GitHub
+   path.
 
-The relationship should be immediately clear:
+The relationship must be immediately clear: Forge is the free local product; Anywhere is its
+optional hosted companion.
 
-- Forge is the free local product.
-- Anywhere is the optional hosted companion.
+## `/anywhere` page narrative
 
-### `/anywhere` landing experience
+Design one complete responsive page with this order:
 
-Design one complete, responsive page with this narrative:
-
-1. Hero: “Your Forge sessions, everywhere.”
+1. Hero headline: “Your Forge sessions, everywhere.”
 2. Subhead: “Leave your desk without leaving your Forge session.”
 3. Primary CTA: “Start 14-day trial with GitHub.”
 4. Trust statement beside or immediately below the CTA.
-5. A polished product demonstration showing desktop → iPhone → laptop handoff. Prefer a believable sequence of real UI surfaces over a decorative illustration.
+5. A polished desktop → iPhone → laptop continuity demonstration using approved app-project
+   screens. Show the same session moving through the sequence; do not design a new app around the
+   demo.
 6. A clear “Forge is free / Anywhere adds” boundary comparison.
-7. Feature sections for live remote control, encrypted sync/history, host fleet, remote jobs/push, workspace handoff, and replay shares.
-8. A security and recovery section that explains end-to-end encryption, recovery words, authorized devices, visible metadata, and the consequence of losing all keys.
-9. A pricing section showing EUR 79/year and EUR 10/month together, with annual selected by default and “14 days, no card” stated clearly.
-10. A concise limits section: three hosts, unlimited personal devices, 5 GB, personal-only.
-11. An entitlement/continuity reassurance: local Forge is unaffected if Anywhere expires or is unavailable.
-12. A practical FAQ.
-13. Final CTA and existing Forge footer.
+7. Focused feature sections for:
+   - Live remote control through the managed relay.
+   - Encrypted sync and offline history.
+   - Personal host fleet and remote jobs.
+   - Generic push notifications.
+   - Workspace handoff.
+   - Expiring encrypted replay links.
+8. A security and recovery section.
+9. Pricing with EUR 79/year and EUR 10/month together, annual selected by default, and “14 days,
+   no card” stated clearly.
+10. Limits: three hosts, unlimited personal devices, 5 GB, personal-only.
+11. Continuity reassurance: local Forge is unaffected if Anywhere expires or is unavailable.
+12. Practical FAQ.
+13. Final CTA and the existing Forge footer.
 
-FAQ topics:
+## Demonstration storyboard
+
+Use a 60–90 second product story that can also be understood as a static sequence:
+
+1. Desktop Forge is working in a real session.
+2. The developer leaves the desk.
+3. A generic phone alert says only “Open Forge to view an update.”
+4. The existing Forge app opens the same live session on iPhone.
+5. The developer responds or approves an action.
+6. Later, the session reaches an idle checkpoint.
+7. The developer initiates workspace handoff to a laptop.
+8. A safe encrypted capsule is prepared, verified, acknowledged, and transferred.
+9. The existing Forge app continues the same session on the laptop.
+
+The marketing canvas may compose approved screens into device frames, but must not change their
+navigation, components, status language, or control placement.
+
+## Security and recovery content
+
+Communicate practical answers first:
+
+- Devices encrypt before upload and decrypt after download.
+- The service can see routing identifiers, timestamps, size, object kind, and signatures, but not
+  plaintext prompts, commands, filenames, repository names, diffs, or transcripts.
+- A 24-word recovery phrase protects account-key recovery.
+- It is shown once and support cannot recover it.
+- Authorized devices receive wrapped account keys.
+- Device revocation rotates future data to a new key epoch for remaining devices and recovery.
+- Losing every authorized device and the recovery phrase makes encrypted cloud content
+  unrecoverable.
+
+Technical algorithm names may appear in an inspectable detail disclosure, not as headline copy:
+X25519, Ed25519, HKDF-SHA256, and XChaCha20-Poly1305.
+
+Do not display realistic recovery words, secrets, QR payloads, prompts, commands, filenames,
+repository names, diffs, or transcripts in marketing mockups.
+
+## Pricing interaction
+
+- Present annual and monthly as one accessible plan choice.
+- Annual is selected by default.
+- Do not use two competing primary buttons.
+- Show EUR 79/year and EUR 10/month simultaneously.
+- State that the no-card trial starts with the first host connection.
+- CTA destinations should make GitHub authentication clear.
+- Paddle is the merchant of record, but payment details do not need visual prominence on the
+  marketing page.
+
+## FAQ content
+
+Answer:
 
 - What remains free?
 - When does the trial start?
-- Can the service read sessions, prompts, commands, filenames, diffs, or repositories?
+- Can the service read sessions, prompts, commands, filenames, repositories, diffs, or transcripts?
 - What happens if the recovery phrase is lost?
 - What happens after cancellation or payment failure?
-- Does Anywhere replace local backups or Git?
+- Does Anywhere replace Git or backups?
 - Can I use it for a team?
 - What happens above 5 GB?
-- Can I still use my own tunnel?
+- Can I keep using my own tunnel?
+- What happens if the service is offline?
 
-### Marketing interaction requirements
+## Responsive and accessibility requirements
 
-- Annual/monthly selection must be a real accessible choice, not two competing primary buttons.
-- Annual is selected by default.
-- CTA destinations should visibly communicate GitHub authentication and no-card trial behavior.
-- Animation may demonstrate continuity across devices, but the story must remain understandable with reduced motion or JavaScript disabled.
-- Do not add non-essential marketing-cookie UX. Funnel tracking is first-party metadata only.
-
-## Authenticated product information architecture
-
-Anywhere lives inside the existing Forge app. Design the smallest coherent navigation addition that supports:
-
-- Anywhere overview/status.
-- Hosts.
-- Devices and pairing.
-- Synced/offline history.
-- Remote jobs.
-- Notifications.
-- Storage.
-- Handoff.
-- Replay shares.
-- Plan and billing.
-- Account export/deletion and logout.
-
-Do not create a separate generic admin dashboard. Make the current session and host context available wherever it prevents mistakes.
-
-## Flow 1: GitHub sign-in and account bootstrap
-
-Design:
-
-1. Entry from marketing CTA and from an existing Forge app settings/connection surface.
-2. GitHub device-flow sign-in with clear pending, expired, denied, retry, and success states.
-3. Returning-account path that restores access on an authorized device.
-4. New-account explanation before recovery material is generated.
-5. A one-time 24-word recovery phrase display.
-6. Strong instructions to record it offline; support cannot recover it.
-7. Sampled-word confirmation using several requested positions.
-8. Confirmation failure, restart, and abandon paths.
-9. First-host enrollment handoff to the CLI command `forge anywhere enable --name NAME`.
-10. A waiting state that explicitly says the trial has not started until the first host connects.
-
-Security requirements:
-
-- Never offer clipboard persistence, analytics, screenshots, cloud backup, or automatic storage for the recovery phrase.
-- Make “shown once” and “cannot be recovered by support” unmissable without using panic language.
-- Avoid visually exposing recovery words in thumbnails, background frames, or design documentation examples; use numbered redacted placeholders in shared mockups.
-
-## Flow 2: Pairing another device
-
-Design both sides of a ten-minute pairing flow:
-
-- New device displays or presents a QR challenge containing its public exchange key.
-- Authorized device scans or pastes the challenge.
-- Review shows account identity, new device name/type, key fingerprint, expiry countdown, and a clear approval action.
-- Success explains that the account key was wrapped to the new device.
-- Expired, already-used, malformed, wrong-account, offline, camera-denied, and rejected states.
-
-Pairing is security-sensitive. Approval must be explicit and should encourage the user to compare the device in front of them. Do not imply that scanning alone grants access.
-
-## Flow 3: Anywhere overview
-
-Design a useful personal fleet overview, not a vanity dashboard. It should answer:
-
-- Am I connected through Direct or Anywhere transport?
-- What is my entitlement state?
-- Which host currently owns or runs the selected session?
-- Which hosts are online?
-- Is encrypted sync current?
-- How much encrypted storage is used?
-- Are there pending jobs, handoffs, device actions, or recovery warnings?
-
-Provide first-use, healthy, degraded, offline, no-host, trial-nearly-over, read-only, suspended, and over-quota variants.
-
-## Flow 4: Hosts and transport selection
-
-Design:
-
-- Host list with a maximum of three active hosts.
-- Host detail with stable name/identity, last heartbeat, connector version, capabilities, active sessions, current lease context, and safe revoke/disable action.
-- Add-host instructions using the CLI.
-- Fourth-host limit state with a direct route to revoke or disable another host.
-- Online, connecting, stale, offline, disabled, version-incompatible, relay-unavailable, and entitlement-blocked states.
-- A transport selector that distinguishes `Direct` from `Anywhere` without changing existing direct-server behavior.
-
-Direct/LAN access remains available even if Anywhere is down. Status copy and color must never suggest that Forge itself is unusable merely because the managed connector is offline.
-
-## Flow 5: Live remote session control
-
-Extend the current Forge session UI rather than redesigning it. Show:
-
-- Selected host and transport.
-- Connection/reconnection quality without exposing unnecessary networking detail.
-- The existing remote-v8 session behavior unchanged.
-- A handoff entry point only when eligible.
-- Generic notifications/inbox indicators.
-- Large encrypted transfer progress when payloads move through temporary blob storage.
-- Graceful switching back to direct transport when available.
-
-Cover reconnect, duplicate controller, host sleeping, session ended, entitlement transition, and local-only fallback states.
-
-## Flow 6: Encrypted sync and offline history
-
-Design:
-
-- Synced session/history browsing that visually fits the existing history experience.
-- Clear last-sync and offline availability language.
-- Device-local encrypted cache state.
-- Initial sync, incremental sync, paused, retrying, current, offline, read-only, over-quota, and key-epoch mismatch states.
-- File-conflict copies that preserve both versions rather than pretending one was overwritten.
-- Tombstone/deletion confirmation and eventual consistency messaging.
-- Per-record diagnostics only where actionable; avoid overwhelming ordinary users with protocol language.
-
-Content that can sync includes sessions, messages, checkpoints, tool calls, routing decisions, usage, compactions, memories, user settings, commands, skills, agents, and workflows.
-
-Never imply that provider credentials, keyring contents, embeddings/indexes, push secrets, host schedules, queue internals, caches, build output, checkpoint scratch files, pending uploads, or arbitrary uploads are synced.
-
-## Flow 7: Remote jobs and generic push
-
-Remote jobs:
-
-- Select an enrolled host.
-- Enter an optional working directory and session title.
-- Queue an encrypted request.
-- Show queued locally, uploaded, waiting for host, claimed, running, completed, failed, canceled, expired, and entitlement-blocked states.
-- Explain that path/title content is encrypted while routing metadata remains visible to the service.
-
-Push notifications:
-
-- Opt-in and iOS permission flow.
-- Enabled, denied, disabled, token-refreshing, and service-unavailable states.
-- Explain that lock-screen copy is generic: “Open Forge to view an update.”
-- Never preview prompts, commands, filenames, repository names, diffs, or transcript content in notification mockups.
-
-## Flow 8: Workspace handoff
-
-Treat handoff as a deliberate, high-trust wizard with visible rollback guarantees.
-
-Design these steps:
-
-1. Choose a session at an idle checkpoint.
-2. If a tool call is active, wait for it or explicitly interrupt it before proceeding.
-3. Choose source and destination hosts, never the same host.
-4. Preflight scan and capsule summary.
-5. Show blocked items as a visible actionable list. Do not silently omit non-secret user files.
-6. Confirm capsule creation and temporary encrypted upload.
-7. Destination verifies base commit and prepares an isolated detached worktree.
-8. Patch/extraction/import progress.
-9. Destination acknowledgement.
-10. Lease transfer only after acknowledgement.
-11. Success with a clear “continue on destination” action.
-
-Preflight must communicate rejection of:
-
-- Active tool calls unless finished or interrupted.
-- Missing base commits.
-- `.git` content.
-- Symlinks and special/device files.
-- Absolute or traversal paths.
-- Detected secrets.
-- Ignored caches and build output.
-- Files above 25 MB.
-- Compressed capsules above 100 MB.
-
-Failure variants:
-
-- Patch conflict.
-- Unsafe file.
-- Missing commit.
-- Destination offline.
-- Capsule expired.
-- Storage quota exceeded.
-- Session ID collision/remap.
-- Interrupted upload/download.
-- Destination import failure.
-- Acknowledgement timeout.
-
-Every failure must state that the temporary destination worktree is removed and the source lease remains unchanged when transfer did not complete. Make recovery actions concrete: inspect details, retry, choose another host, return to source, or cancel.
-
-## Flow 9: Encrypted replay shares
-
-Design:
-
-- Create share from an eligible session/replay.
-- Select expiry: 24 hours, 7 days, or 30 days.
-- Explain what the recipient can view and that the service stores ciphertext.
-- Creation/upload progress.
-- Success with copy link, expiry timestamp, and revoke action.
-- List active/expired/revoked shares.
-- Public no-login retrieval screen with decrypting, ready, wrong/missing key fragment, corrupted, expired, revoked, unavailable, and deleted states.
-- Read-only replay viewer that clearly cannot control a live session or browse unrelated account data.
-
-Never put the decryption secret in a server-visible query parameter or imply that the service can recover it.
-
-## Flow 10: Devices and key rotation
-
-Design:
-
-- Device list with “this device,” type, enrollment date, last seen, and key/fingerprint details on demand.
-- Pair-device entry point.
-- Lost-device revocation requiring strong confirmation.
-- Recovery phrase verification where required, with words kept in memory only.
-- Atomic progress state: revoke tokens and hosts, create a new data-key epoch, wrap it only to remaining devices and recovery, then commit.
-- Success that explains future data uses the new epoch.
-- Failure that clearly says whether nothing changed or which recovery action is required.
-
-Avoid a generic red “Delete” action that hides the key-rotation consequence.
-
-## Flow 11: Storage and quota
-
-Design:
-
-- Used bytes versus 5 GB, with accessible text in addition to a meter.
-- Plain explanation of what counts toward storage.
-- Download and deletion actions that remain available above quota.
-- Over-quota state that blocks new writes but not access to existing encrypted data.
-- Retention summaries for temporary relay blobs/capsules, superseded sync revisions, tombstones, shares, and expired subscriptions.
-- Empty, calculating, stale, nearly full, full, and cleanup-in-progress states.
-
-## Flow 12: Billing and entitlement lifecycle
-
-Use this exact state model:
-
-- `trialing`: full access for 14 days from first host connection.
-- `active`: full access through the paid period.
-- `grace`: seven days after payment failure; full read access and relay service continue.
-- `read_only`: 30 days after trial/period/grace expiry; download, restore, delete, export, and billing work, but new relay work, uploads, commands, shares, and capsules are blocked.
-- `suspended`: billing, export, and deletion only until the 90-day retention deadline.
-
-Design:
-
-- Annual and monthly plan choice with annual default.
-- Trial status and exact start/end explanation.
-- Paddle checkout departure and return states.
-- Manage-billing portal action.
-- Active renewal, cancel-at-period-end, payment failure, grace countdown, read-only, suspended, resubscribed, webhook-delay, and checkout-failed states.
-- Warnings 30 and 7 days before retained cloud data is scheduled for deletion.
-
-Cancellation remains active through the paid-through date. A successful payment restores service immediately. Never imply that cancellation deletes local Forge data.
-
-## Flow 13: Account controls and recovery
-
-Design:
-
-- Log out locally: revoke local tokens/keys while preserving local Forge data.
-- Disable/revoke a host: disconnect that host without changing local Forge.
-- Account export: include clear preparation/progress/download-expiry states.
-- Account deletion: explicit scope, idempotent progress, 24-hour live-data deletion target, and encrypted-backup expiry within 30 days.
-- Recovery on a new device using the 24-word phrase.
-- Wrong phrase, phrase checksum failure, unavailable wrapped epoch, revoked device, and lost-everything terminal state.
-
-Be honest: if every authorized device and the recovery phrase are lost, encrypted cloud content cannot be recovered by support.
-
-## Shared state system
-
-Create reusable, named variants for:
-
-### Entitlement
-
-- Trial not started.
-- Trialing.
-- Active.
-- Grace.
-- Read-only.
-- Suspended.
-- Retention deadline approaching.
-
-### Host
-
-- Online and idle.
-- Online and busy.
-- Connecting.
-- Stale.
-- Offline.
-- Disabled/revoked.
-- Connector update required.
-
-### Sync
-
-- Current.
-- Uploading/downloading.
-- Offline with cached data.
-- Retrying.
-- Conflict copy created.
-- Over quota.
-- Key update required.
-- Read-only.
-
-### Handoff
-
-- Eligible.
-- Waiting for checkpoint.
-- Scanning.
-- Blocked with actionable files.
-- Packaging/uploading.
-- Waiting for destination.
-- Applying/importing.
-- Awaiting acknowledgement.
-- Complete.
-- Rolled back.
-- Expired.
-
-### Generic application states
-
-- First-use empty.
-- Loading/skeleton.
-- Slow network.
-- Offline.
-- Partial/stale data.
-- Permission denied.
-- Session expired and re-authentication required.
-- Service unavailable while local Forge remains available.
-- Destructive action confirmation.
-- Success with next action.
-
-Status must never rely on color alone. Pair color with text, iconography, and where useful a timestamp or next action.
-
-## Security and privacy UX
-
-The service may see routing identifiers, timestamps, sizes, object kind, and signatures. It must not be presented as seeing plaintext payloads.
-
-Encryption model to communicate in user language:
-
-- Devices exchange keys using X25519.
-- Devices sign with Ed25519.
-- Payloads use XChaCha20-Poly1305.
-- Account data has key epochs.
-- Each encrypted object is signed and replay-protected.
-- Device revocation rotates to a new epoch for remaining devices and recovery.
-
-Do not surface algorithm names everywhere. Put them in inspectable technical details while primary copy answers practical questions: who can read this, what happens if a device is lost, what does the service know, and can support recover the data?
-
-Never show these as analytics or notification content:
-
-- Prompts.
-- Filenames.
-- Repository names.
-- Commands.
-- Diffs.
-- Transcript content.
-
-Marketing analytics are limited to these first-party funnel events:
-
-`landing_view → trial_start → first_host → first_remote_session → first_handoff → checkout → paid`
-
-## Content and terminology
-
-Use consistently:
-
-- `host` for a machine running the Forge connector.
-- `device` for a personal controller authorized to decrypt account data.
-- `Direct` and `Anywhere` for transport choices.
-- `workspace handoff` for moving a paused session and safe workspace capsule.
-- `replay share` for an expiring encrypted read-only link.
-- `recovery phrase` for the 24 BIP39 words.
-- `encrypted storage` rather than generic “cloud drive.”
-- `session lease` only in technical/detail views; primary copy should say which host currently owns the session.
-
-Avoid interchangeably calling hosts “devices.” Avoid “sync everything,” “zero knowledge,” “unhackable,” or “military-grade.”
-
-## Responsive behavior
-
-Design for:
-
-- Desktop web at approximately 1440 px.
-- Compact desktop/tablet at approximately 1024 px.
-- Mobile web/iPhone at approximately 390 px.
-- Long localized strings and 200% zoom.
-
-On mobile:
-
-- Prioritize current host/session, next action, and critical state.
-- Move secondary technical detail into disclosures or detail screens without hiding consequences.
-- Keep security confirmations and recovery flows explicit.
-- Do not require hover, drag-only controls, or tiny tap targets.
-
-## Accessibility requirements
+Design at approximately 1440 px, 1024 px, and 390 px. Support long localized strings and 200%
+zoom.
 
 Target WCAG 2.2 AA:
 
-- Semantic headings and landmarks.
+- Semantic landmarks and heading order.
 - Logical keyboard and screen-reader order.
 - Visible focus states.
 - Minimum 44 px touch targets where practical.
-- Sufficient text/control contrast in light and dark modes.
-- 200% zoom without loss of actions or content.
-- Error summaries plus field-level errors.
-- Accessible progress and status announcements.
-- Reduced-motion alternatives.
+- Sufficient contrast in light and dark themes.
 - No information communicated by color, animation, hover, or device mockup alone.
-- Recovery word and QR flows must have accessible non-camera/non-visual alternatives.
+- Reduced-motion alternatives.
+- Pricing controls and FAQ disclosures must be keyboard and screen-reader operable.
+- The continuity story must remain understandable when animation or JavaScript is disabled.
 
-## Motion and demonstration
+## Motion
 
-Use restrained motion to explain continuity:
+Use restrained motion only to explain continuity across approved app screenshots:
 
-- A session update can travel from desktop to iPhone.
-- Handoff can visibly pause, package, acknowledge, and continue on laptop.
-- Sync and relay status can transition without page jumps.
+- Session update travels from desktop to iPhone.
+- Handoff visibly pauses, packages, acknowledges, and continues on laptop.
 
-All animations should be short, interruptible, and meaningful. Provide reduced-motion static alternatives. Never animate recovery words or destructive confirmations decoratively.
+Motion must be short, interruptible, meaningful, and replaceable with a static sequence. Do not
+animate recovery words or security-sensitive content decoratively.
 
-## Component inventory
+## Analytics boundary
 
-Create implementation-ready components and variants for at least:
+Do not add non-essential marketing-cookie UX. First-party funnel metadata is limited to:
 
-- Existing Forge global navigation extended with Anywhere.
-- Primary/secondary/destructive actions.
-- Transport selector.
-- Host row/card and host status.
-- Device row and fingerprint detail.
-- Entitlement banner/status badge.
-- Trial countdown.
-- Storage meter.
-- Sync status.
-- Offline/cached indicator.
-- Remote job row and state timeline.
-- Handoff stepper and preflight issue list.
-- Replay share row and expiry selector.
-- QR challenge/scanner fallback.
-- Recovery phrase presentation and sampled confirmation.
-- Security detail disclosure.
-- Destructive confirmation dialog/sheet.
-- Inline error, page error, empty state, skeleton, and stale-data banner.
-- Pricing choice.
-- FAQ disclosure.
-- Product demo device frames that reuse real interface components.
+`landing_view → trial_start → first_host → first_remote_session → first_handoff → checkout → paid`
 
-## Final output checklist
+Never collect or visually imply collection of prompts, filenames, repository names, commands,
+diffs, or transcript content.
 
-Before considering the design complete, verify that the project includes:
+## Deliverables
 
-- Existing Forge homepage with restrained Anywhere additions.
-- Complete `/anywhere` marketing page.
-- Desktop/web and mobile authenticated information architecture.
-- All 13 product flows in this brief.
-- Entitlement, host, sync, handoff, offline, error, and destructive variants.
-- A three-device desktop → iPhone → laptop demonstration.
-- Exact pricing and limits.
-- Clear free-versus-paid boundary.
-- End-to-end encryption and recovery explained without overclaiming.
-- Direct/local Forge continuity in degraded and unpaid states.
-- Accessible light/dark and responsive variants consistent with the current Forge project.
-- Reusable named components with implementation notes.
-- No team/organization UI, no invented legal pages, and no unrelated redesign of Forge.
+Create one canvas group named `Forge Anywhere — Website Marketing` containing:
 
-When finished, present the canvas map and a concise list of unresolved product questions. Do not export production HTML until the full flow and state coverage has been reviewed.
+- Existing homepage desktop/mobile frames with restrained Anywhere additions.
+- Complete `/anywhere` desktop, tablet, and mobile frames.
+- Light and dark states consistent with the existing website.
+- Static and motion storyboards for desktop → iPhone → laptop continuity.
+- Reusable website-only components and variants for pricing, boundary comparison, security detail,
+  limits, FAQ, and CTA sections.
+- Interaction, responsive, reduced-motion, and accessibility notes.
+- A list of required approved app screenshots from the separate app design project.
+
+Do not create authenticated app canvases in this project. When finished, present the canvas map and
+the list of app-project exports needed for the marketing demonstration. Do not export production
+HTML until the marketing design has been reviewed.
