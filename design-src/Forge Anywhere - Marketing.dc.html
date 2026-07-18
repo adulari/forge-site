@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Forge Anywhere — Marketing</title>
+<style>
+body { margin:0; background:#131118; font-family:'Geist','Helvetica Neue',sans-serif; }
+h1,h2,h3 { font-family:'Bricolage Grotesque','Helvetica Neue',sans-serif; }
+a { color:#FF8A30; text-decoration:none; }
+a:hover { color:#FFB068; }
+[data-forge-root] {
+  --bg:#0A0812; --panel:#0C0914; --panel2:#0D0A16; --panel-hot:#0E0810; --panel-hot2:#16100E;
+  --border:#1E1A28; --border2:#2A2436; --border-hot:#3A2418;
+  --ink:#F2E9DC; --ink2:#D0D5E0; --muted:#A8ADC0; --muted2:#8B90A5; --dim:#52576C;
+  --accent:#FF8A30; --accent-hi:#FFB068; --code:#FFD9B8; --gold:#FFD040; --cy:#4BD4DA;
+  --o2:#FF9828; --o3:#FF6020; --green:#5CD07A; --green-bg:#0A100C; --green-bd:#1E3226;
+  --track:#16121F; --bar:#3A3448; --navbg:rgba(10,8,18,.82); --capsule:rgba(16,12,20,.74);
+}
+[data-forge-root][data-theme="light"] {
+  --bg:#F1EEE8; --panel:#FAF8F4; --panel2:#EFEAE0; --panel-hot:#F7EDE0; --panel-hot2:#F6E3CC;
+  --border:#E5E0D5; --border2:#D8D3C6; --border-hot:#E4C9A5;
+  --ink:#211F1B; --ink2:#3A362E; --muted:#57544C; --muted2:#6B675C; --dim:#8B8779;
+  --accent:#B65108; --accent-hi:#93430A; --code:#7A3E10; --gold:#8F6A00; --cy:#0E7C86;
+  --o2:#A85408; --o3:#B0400E; --green:#1E8A47; --green-bg:#E9F4EC; --green-bd:#C4E0CC;
+  --track:#E4DECF; --bar:#B9B2A2; --navbg:rgba(246,242,235,.85); --capsule:rgba(250,248,244,.82);
+}
+@keyframes flow { 0%{background-position:0% 0} 100%{background-position:200% 0} }
+@keyframes emberBed { 0%,100%{opacity:.55} 50%{opacity:.95} }
+@keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+@media (prefers-reduced-motion: reduce) { * { animation-duration:.01s !important; animation-iteration-count:1 !important; } }
+</style>
+</helmet>
+
+<div style="padding:44px 48px 80px; color:#D0D5E0; min-width:2000px;">
+
+  <!-- CANVAS HEADER -->
+  <div style="max-width:920px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; color:#8B90A5;">FORGE ANYWHERE · WEBSITE MARKETING</div>
+    <h1 style="margin:10px 0 0; font-size:34px; font-weight:700; color:#F2E9DC; letter-spacing:-.02em;">Forge Anywhere — Marketing</h1>
+    <p style="margin:14px 0 0; font-size:14px; line-height:1.65; color:#A8ADC0;">Homepage stays a Forge homepage — one nav entry, one restrained secondary section, one CTA that never competes with the install path. The <span style="font-family:'JetBrains Mono',monospace; color:#FFD9B8;">/anywhere</span> page carries the full story: hero → real-UI handoff demo → free/paid boundary → features → security &amp; recovery → pricing (annual default) → limits → continuity → FAQ. All frames reuse the live landing's tokens, capsule nav, terminal chrome, and device mocks.</p>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; font-family:'JetBrains Mono',monospace; font-size:11px;">
+      <span style="border:1px solid #2A2436; border-radius:6px; padding:5px 10px; color:#8B90A5;">A · homepage additions</span>
+      <span style="border:1px solid #2A2436; border-radius:6px; padding:5px 10px; color:#8B90A5;">B · /anywhere desktop 1360</span>
+      <span style="border:1px solid #2A2436; border-radius:6px; padding:5px 10px; color:#8B90A5;">C · /anywhere mobile 390 + tablet 1024</span>
+      <span style="border:1px solid #2A2436; border-radius:6px; padding:5px 10px; color:#8B90A5;">D · light-mode variant</span>
+      <span style="border:1px solid #2A2436; border-radius:6px; padding:5px 10px; color:#8B90A5;">E · continuity storyboard</span>
+      <span style="border:1px solid #2A2436; border-radius:6px; padding:5px 10px; color:#8B90A5;">F · app exports · a11y · map</span>
+    </div>
+  </div>
+
+  <!-- ============ GROUP A · HOMEPAGE ADDITIONS ============ -->
+  <div style="margin-top:56px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#FF8A30; font-weight:700;">A · Existing homepage — restrained additions</div>
+    <div style="display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap; margin-top:16px;">
+
+      <!-- A1 desktop -->
+      <div style="flex:none;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#8B90A5; margin-bottom:8px;">A1 · nav entry + secondary section · 1200w · inserts after “Apps”, before “Compare”</div>
+        <div data-forge-root="1" data-theme="dark" data-screen-label="A1 homepage additions desktop" style="width:1200px; border:1px solid #2A2436; border-radius:14px; overflow:hidden; background:var(--bg); color:var(--ink);">
+          <!-- nav with Anywhere added -->
+          <div style="display:flex; justify-content:center; padding:18px 24px 8px;">
+            <nav style="display:flex; align-items:center; gap:6px; padding:8px 8px 8px 20px; border-radius:999px; background:var(--capsule); border:1px solid rgba(255,138,48,.22);">
+              <span style="display:flex; align-items:center; gap:10px; color:var(--ink); margin-right:18px;"><img src="assets/forge-logo.svg" alt="Forge" style="width:28px; height:28px;"><span style="font-weight:700; font-size:17px; letter-spacing:.02em;">Forge</span></span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Mesh</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Benchmarks</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Features</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Apps</span>
+              <span style="display:inline-flex; align-items:center; gap:7px; color:var(--ink); font-size:14px; padding:8px 14px; border-radius:999px; background:rgba(255,138,48,.10);">Anywhere<span style="width:5px; height:5px; border-radius:50%; background:var(--accent); animation:emberBed 2.4s ease-in-out infinite;"></span></span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Compare</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px; margin-right:10px;">Docs</span>
+              <span style="border:1px solid var(--border2); border-radius:999px; padding:8px 16px; color:var(--ink2); font-size:13px; font-family:'JetBrains Mono',monospace;">★ GitHub</span>
+              <span style="background:#FF8A30; color:#12080A; font-weight:700; border-radius:999px; padding:9px 20px; font-size:14px;">Install</span>
+            </nav>
+          </div>
+          <!-- secondary section -->
+          <div style="padding:64px 64px 68px; border-top:1px solid var(--border); margin-top:40px;">
+            <div style="max-width:1060px; margin:0 auto;">
+              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+                <div style="max-width:620px;">
+                  <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.12em; color:var(--accent);">FORGE ANYWHERE · OPTIONAL COMPANION</div>
+                  <h2 style="margin:14px 0 0; font-size:40px; font-weight:700; letter-spacing:-.02em;">Leave your desk without leaving <span style="color:var(--accent);">your session.</span></h2>
+                  <p style="margin:16px 0 0; color:var(--muted); font-size:17px; line-height:1.6;">Begin on the desktop, respond from your iPhone on the train, and hand the complete workspace to your laptop when you sit back down. End-to-end encrypted; the relay never sees plaintext.</p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
+                  <span style="display:inline-flex; align-items:center; gap:10px; border:1px solid var(--accent); border-radius:999px; padding:11px 22px; color:var(--accent); font-weight:600; font-size:15px;">Explore Anywhere →</span>
+                  <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--dim);">€10/mo · €79/yr · 14-day trial, no card</span>
+                </div>
+              </div>
+              <!-- three-part story -->
+              <div style="display:grid; grid-template-columns:1.2fr 40px .8fr 40px 1fr; gap:0 8px; align-items:center; margin-top:44px;">
+                <div style="border:1px solid var(--border2); border-radius:10px; background:#0C0E16; overflow:hidden;">
+                  <div style="display:flex; align-items:center; gap:7px; padding:9px 14px; background:#0E0F15; border-bottom:1px solid #1E2233;"><span style="width:8px;height:8px;border-radius:50%;background:#F35C5C;"></span><span style="width:8px;height:8px;border-radius:50%;background:#EEBC52;"></span><span style="width:8px;height:8px;border-radius:50%;background:#5CD07A;"></span><span style="margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:10.5px; color:#52576C;">forge chat · studio · ~/dev/my-api</span></div>
+                  <div style="padding:14px 16px; font-family:'JetBrains Mono',monospace; font-size:11.5px; line-height:1.9; color:#A9A9B6;">
+                    <div><span style="color:#7AB7FF; font-weight:700;">you</span> harden token refresh</div>
+                    <div><span style="color:#4BD4DA;">● edit</span> src/auth/refresh.rs <span style="color:#5CD07A;">+42</span> <span style="color:#F35C5C;">−3</span></div>
+                    <div><span style="color:#EEBC52;">◉ waiting on permission…</span></div>
+                  </div>
+                  <div style="padding:7px 14px; background:#0E0F15; border-top:1px solid #1E2233; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">1 · begins on <span style="color:#E9E9EF;">desktop</span></div>
+                </div>
+                <div style="height:2px; background:linear-gradient(90deg,transparent,#FF8A30,transparent); background-size:200% 100%; animation:flow 2.2s linear infinite;"></div>
+                <div style="border:1px solid var(--border2); border-radius:18px; background:#0B0B10; overflow:hidden;">
+                  <div style="display:flex; justify-content:center; padding-top:8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:#000; border-radius:999px; padding:4px 11px; font-family:'JetBrains Mono',monospace; font-size:8.5px; color:#E9E9EF;"><span style="width:5px;height:5px;border-radius:50%;background:#FF913C;"></span>⚒ Anywhere · encrypted</span></div>
+                  <div style="margin:10px 10px 0; background:#2E2415; border-radius:8px; padding:9px 11px;">
+                    <div style="font-size:11px; font-weight:600; color:#E9E9EF;">harden token refresh</div>
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6E6E7A; margin-top:3px;">host: studio · via relay</div>
+                    <div style="display:flex; gap:6px; margin-top:8px;"><span style="flex:1; text-align:center; background:#7DD394; color:#1B1B22; font-weight:700; font-size:10px; border-radius:6px; padding:7px 0;">Allow</span><span style="flex:1; text-align:center; background:#F0716E; color:#1B1B22; font-weight:700; font-size:10px; border-radius:6px; padding:7px 0;">Deny</span></div>
+                  </div>
+                  <div style="padding:8px 12px 10px; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">2 · answered from <span style="color:#E9E9EF;">iPhone</span></div>
+                </div>
+                <div style="height:2px; background:linear-gradient(90deg,transparent,#4BD4DA,transparent); background-size:200% 100%; animation:flow 2.2s 1s linear infinite;"></div>
+                <div style="border:1px solid var(--green-bd); border-radius:10px; background:var(--green-bg); overflow:hidden;">
+                  <div style="padding:14px 16px;">
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--green); font-weight:700;">✓ WORKSPACE HANDOFF</div>
+                    <div style="font-size:13px; color:var(--ink2); margin-top:6px; line-height:1.5;">studio → laptop · capsule verified · lease transferred</div>
+                    <span style="display:inline-block; margin-top:10px; border:1px solid var(--green); color:var(--green); border-radius:6px; padding:6px 12px; font-size:11.5px; font-weight:600;">Continue on laptop</span>
+                  </div>
+                  <div style="padding:7px 14px; border-top:1px solid var(--green-bd); font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">3 · continues on <span style="color:#E9E9EF;">laptop</span></div>
+                </div>
+              </div>
+              <p style="margin:22px 0 0; text-align:center; font-size:13.5px; color:var(--dim);">Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A2 mobile -->
+      <div style="flex:none;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#8B90A5; margin-bottom:8px;">A2 · same section · 390w</div>
+        <div data-forge-root="1" data-theme="dark" data-screen-label="A2 homepage additions mobile" style="width:390px; border:1px solid #2A2436; border-radius:14px; overflow:hidden; background:var(--bg); color:var(--ink);">
+          <div style="padding:40px 22px 44px;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; color:var(--accent);">FORGE ANYWHERE</div>
+            <h2 style="margin:12px 0 0; font-size:28px; font-weight:700; letter-spacing:-.02em;">Leave your desk without leaving <span style="color:var(--accent);">your session.</span></h2>
+            <p style="margin:12px 0 0; color:var(--muted); font-size:15px; line-height:1.6;">Begin on desktop, respond from your iPhone, hand the workspace to your laptop.</p>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:24px;">
+              <div style="display:flex; align-items:center; gap:12px; border:1px solid var(--border2); border-radius:10px; padding:13px 16px; background:var(--panel);"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:700;">1</span><span style="font-size:13.5px; color:var(--ink2);">Session begins on <b>desktop</b></span><span style="margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim);">forge chat</span></div>
+              <div style="display:flex; align-items:center; gap:12px; border:1px solid var(--border2); border-radius:10px; padding:13px 16px; background:var(--panel);"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:700;">2</span><span style="font-size:13.5px; color:var(--ink2);">Permission answered from <b>iPhone</b></span><span style="margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim);">encrypted</span></div>
+              <div style="display:flex; align-items:center; gap:12px; border:1px solid var(--green-bd); border-radius:10px; padding:13px 16px; background:var(--green-bg);"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--green); font-weight:700;">3</span><span style="font-size:13.5px; color:var(--ink2);">Workspace hands off to <b>laptop</b></span><span style="margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green);">✓</span></div>
+            </div>
+            <span style="display:flex; justify-content:center; align-items:center; gap:10px; border:1px solid var(--accent); border-radius:999px; padding:14px 22px; color:var(--accent); font-weight:600; font-size:15px; margin-top:22px;">Explore Anywhere →</span>
+            <p style="margin:16px 0 0; text-align:center; font-size:12.5px; color:var(--dim); line-height:1.5;">Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- A notes -->
+      <div style="flex:none; width:300px; border:1px dashed #3A3448; border-radius:12px; padding:18px 20px; font-size:12.5px; line-height:1.65; color:#A8ADC0;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700; margin-bottom:8px;">IMPLEMENTATION NOTES · A</div>
+        <div>· Nav gains one link, “Anywhere”, after Apps. Ember dot = new-ness marker; drop it after launch month. On mobile it joins the burger sheet.</div>
+        <div style="margin-top:8px;">· Section sits between “Apps” and “Compare” — it reads as another surface, not a new product pitch.</div>
+        <div style="margin-top:8px;">· CTA is the secondary (outline) button style; the page's only primary stays the Install capsule button.</div>
+        <div style="margin-top:8px;">· The three mocks are static markup, no JS required. Flow lines pause under reduced motion; step numbers carry the sequence.</div>
+        <div style="margin-top:8px;">· A11y: section is a labelled <span style="font-family:'JetBrains Mono',monospace;">&lt;section aria-label="Forge Anywhere"&gt;</span>; steps are an ordered list semantically.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GROUP B · /ANYWHERE DESKTOP ============ -->
+  <div style="margin-top:72px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#FF8A30; font-weight:700;">B · /anywhere — full page · desktop 1360</div>
+    <div style="display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap; margin-top:16px;">
+      <div style="flex:none;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#8B90A5; margin-bottom:8px;">B1 · complete narrative, top → bottom · pricing toggle + FAQ are live</div>
+        <div data-forge-root="1" data-theme="dark" data-screen-label="B1 /anywhere desktop" style="width:1360px; border:1px solid #2A2436; border-radius:14px; overflow:hidden; background:var(--bg); color:var(--ink);">
+
+          <!-- nav -->
+          <div style="display:flex; justify-content:center; padding:18px 24px 0;">
+            <nav style="display:flex; align-items:center; gap:6px; padding:8px 8px 8px 20px; border-radius:999px; background:var(--capsule); border:1px solid rgba(255,138,48,.22);">
+              <span style="display:flex; align-items:center; gap:10px; color:var(--ink); margin-right:18px;"><img src="assets/forge-logo.svg" alt="Forge" style="width:28px; height:28px;"><span style="font-weight:700; font-size:17px;">Forge</span></span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Mesh</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Benchmarks</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Features</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px;">Apps</span>
+              <span style="color:var(--ink); font-size:14px; padding:8px 14px; border-radius:999px; background:rgba(255,138,48,.14); font-weight:600;">Anywhere</span>
+              <span style="color:var(--muted); font-size:14px; padding:8px 14px; margin-right:10px;">Docs</span>
+              <span style="border:1px solid var(--border2); border-radius:999px; padding:8px 16px; color:var(--ink2); font-size:13px; font-family:'JetBrains Mono',monospace;">★ GitHub</span>
+              <span style="background:#FF8A30; color:#12080A; font-weight:700; border-radius:999px; padding:9px 20px; font-size:14px;">Install</span>
+            </nav>
+          </div>
+
+          <!-- 1+2+3+4 hero -->
+          <header data-screen-label="anywhere hero" style="position:relative; overflow:hidden; padding:96px 64px 72px; text-align:center; background:radial-gradient(1000px 520px at 50% 120%, rgba(216,45,28,.26), rgba(255,96,32,.09) 40%, transparent 70%);">
+            <div style="max-width:840px; margin:0 auto;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; color:var(--accent);">OPTIONAL PAID COMPANION · END-TO-END ENCRYPTED</div>
+              <h1 style="margin:18px 0 0; font-size:72px; line-height:1.02; font-weight:700; letter-spacing:-.02em; text-wrap:balance;">Your Forge sessions, <span style="color:var(--accent);">everywhere.</span></h1>
+              <p style="margin:22px auto 0; max-width:620px; color:var(--muted); font-size:20px; line-height:1.55;">Leave your desk without leaving your Forge session. A managed encrypted relay, synced history, remote jobs, and safe workspace handoff between your machines.</p>
+              <div style="display:flex; justify-content:center; align-items:center; gap:16px; margin-top:36px; flex-wrap:wrap;">
+                <span style="display:inline-flex; align-items:center; gap:11px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:15px 26px; font-size:16px; box-shadow:0 0 30px rgba(255,138,48,.35);"><svg width="19" height="19" viewBox="0 0 16 16" fill="#12080A" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>Start 14-day trial with GitHub</span>
+                <span style="border:1px solid var(--border2); border-radius:10px; padding:14px 22px; color:var(--ink2); font-size:15px;">See what stays free ↓</span>
+              </div>
+              <div style="margin-top:16px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted2);">14 days · no card · one trial per GitHub account · <span style="color:var(--code);">trial starts when your first host connects</span></div>
+              <div style="display:inline-flex; align-items:center; gap:10px; margin-top:26px; border:1px solid var(--green-bd); background:var(--green-bg); border-radius:999px; padding:9px 18px; font-size:13.5px; color:var(--ink2);"><span style="color:var(--green); font-weight:700;">✓</span> Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</div>
+            </div>
+          </header>
+
+          <!-- 5 demo -->
+          <section data-screen-label="handoff demo" style="padding:24px 64px 84px;">
+            <div style="max-width:1180px; margin:0 auto;">
+              <div style="display:grid; grid-template-columns:1.25fr 44px .75fr 44px 1fr; gap:0 10px; align-items:center;">
+                <!-- desktop -->
+                <div style="border:1px solid #26262E; border-radius:12px; background:#0C0E16; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5);">
+                  <div style="display:flex; align-items:center; gap:8px; padding:11px 16px; background:#0E0F15; border-bottom:1px solid #1E2233;"><span style="width:10px;height:10px;border-radius:50%;background:#F35C5C;"></span><span style="width:10px;height:10px;border-radius:50%;background:#EEBC52;"></span><span style="width:10px;height:10px;border-radius:50%;background:#5CD07A;"></span><span style="margin-left:10px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#52576C;">forge chat · studio · ~/dev/my-api</span></div>
+                  <div style="padding:18px 20px 6px; font-family:'JetBrains Mono',monospace; font-size:12.5px; line-height:1.9;">
+                    <div><span style="color:#7AB7FF; font-weight:700;">you</span></div>
+                    <div style="color:var(--ink2);">harden token refresh across the auth stack</div>
+                    <div style="margin-top:8px;"><span style="color:var(--accent); font-weight:700;">⚒ forge</span></div>
+                    <div><span style="color:#4BD4DA;">● read_file</span> <span style="color:var(--ink2);">src/auth/refresh.rs</span></div>
+                    <div><span style="color:#4BD4DA;">● edit</span> <span style="color:var(--ink2);">src/auth/refresh.rs</span> <span style="color:#5CD07A;">+42</span> <span style="color:#F35C5C;">−3</span></div>
+                    <div><span style="background:#FF8A30; color:#0E0F15; font-weight:700; padding:1px 8px;">◉ PERMISSION</span> <span style="color:#EEBC52;">bash cargo test --workspace</span></div>
+                    <div style="color:var(--dim);">waiting for approval…</div>
+                  </div>
+                  <div style="display:flex; gap:14px; padding:9px 16px; margin-top:8px; background:#0E0F15; border-top:1px solid #1E2233; font-family:'JetBrains Mono',monospace; font-size:11px;"><span style="color:var(--green);">● Direct</span><span style="color:#52576C;">host: studio</span><span style="margin-left:auto; color:#52576C;">1 · desktop</span></div>
+                </div>
+                <div style="height:2px; background:linear-gradient(90deg,transparent,#FF8A30,transparent); background-size:200% 100%; animation:flow 2.2s linear infinite;"></div>
+                <!-- phone -->
+                <div style="border:1px solid #34343E; border-radius:24px; background:#0B0B10; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.55);">
+                  <div style="display:flex; justify-content:center; padding-top:9px;"><span style="display:inline-flex; align-items:center; gap:6px; background:#000; border-radius:999px; padding:5px 13px; font-family:'JetBrains Mono',monospace; font-size:9px; color:#E9E9EF;"><span style="width:5px;height:5px;border-radius:50%;background:#FF913C; animation:emberBed 1.2s ease-in-out infinite;"></span>⚒ 1 waiting</span></div>
+                  <div style="margin:12px 12px 0; background:#1B1B22; border-radius:10px; padding:10px 12px;">
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6E6E7A;">notification · lock screen</div>
+                    <div style="font-size:11.5px; color:#E9E9EF; margin-top:4px;">Open Forge to view an update.</div>
+                  </div>
+                  <div style="margin:10px 12px 0; background:#2E2415; border-radius:10px; padding:11px 13px;">
+                    <div style="display:flex; align-items:center; gap:7px;"><span style="width:7px;height:7px;border-radius:50%;background:#F0716E;"></span><span style="font-size:12px; font-weight:600; color:#E9E9EF;">harden token refresh</span></div>
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; color:#6E6E7A; margin-top:4px;">host: studio · <span style="color:#FF913C;">Anywhere</span> · encrypted relay</div>
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#E9E9EF; margin-top:7px;">bash cargo test --workspace</div>
+                    <div style="display:flex; gap:7px; margin-top:9px;"><span style="flex:1; text-align:center; background:#7DD394; color:#1B1B22; font-weight:700; font-size:11px; border-radius:8px; padding:10px 0;">Allow</span><span style="flex:1; text-align:center; background:#F0716E; color:#1B1B22; font-weight:700; font-size:11px; border-radius:8px; padding:10px 0;">Deny</span></div>
+                  </div>
+                  <div style="padding:10px 14px 12px; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">2 · iPhone, away from the desk</div>
+                </div>
+                <div style="height:2px; background:linear-gradient(90deg,transparent,#4BD4DA,transparent); background-size:200% 100%; animation:flow 2.2s 1.1s linear infinite;"></div>
+                <!-- laptop -->
+                <div style="border:1px solid #26262E; border-radius:12px; background:#0B0B10; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.5);">
+                  <div style="display:flex; align-items:center; gap:8px; padding:11px 16px; background:#131318; border-bottom:1px solid #26262E;"><span style="width:10px;height:10px;border-radius:50%;background:#F35C5C;"></span><span style="width:10px;height:10px;border-radius:50%;background:#EEBC52;"></span><span style="width:10px;height:10px;border-radius:50%;background:#5CD07A;"></span><span style="margin-left:10px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#6E6E7A;">Forge · laptop</span></div>
+                  <div style="padding:16px 18px 12px;">
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--green); font-weight:700;">✓ WORKSPACE HANDOFF COMPLETE</div>
+                    <div style="font-family:'JetBrains Mono',monospace; font-size:11.5px; line-height:2.0; color:#A9A9B6; margin-top:8px;">
+                      <div><span style="color:#7DD394;">✓</span> capsule 8.2 MB · verified</div>
+                      <div><span style="color:#7DD394;">✓</span> base commit a1c3f09 present</div>
+                      <div><span style="color:#7DD394;">✓</span> worktree imported · 14 files</div>
+                      <div><span style="color:#7DD394;">✓</span> session lease → laptop</div>
+                    </div>
+                    <span style="display:inline-block; margin-top:10px; background:#7DD394; color:#1B1B22; font-weight:700; font-size:12.5px; border-radius:8px; padding:9px 18px;">Continue here</span>
+                  </div>
+                  <div style="padding:8px 16px 10px; border-top:1px solid #26262E; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">3 · laptop, later</div>
+                </div>
+              </div>
+              <p style="margin:20px auto 0; text-align:center; color:var(--dim); font-size:14px; max-width:640px;">One session, three machines — these are the real Forge surfaces, not an illustration. The relay carries ciphertext; your devices hold the keys.</p>
+            </div>
+          </section>
+
+          <!-- 6 boundary -->
+          <section data-screen-label="free vs anywhere boundary" style="padding:84px 64px; border-top:1px solid var(--border);">
+            <div style="max-width:1060px; margin:0 auto;">
+              <h2 style="margin:0; font-size:42px; font-weight:700; letter-spacing:-.02em;">Forge is free. <span style="color:var(--accent);">Anywhere adds the relay.</span></h2>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px;">
+                <div style="border:1px solid var(--border2); border-radius:12px; padding:30px 34px; background:var(--panel);">
+                  <div style="display:flex; align-items:baseline; gap:12px;"><div style="font-weight:700; font-size:20px;">Forge — free, forever</div><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--cy);">AGPL-3.0</span></div>
+                  <div style="margin-top:18px; font-size:15px; line-height:2.15; color:var(--ink2);">
+                    <div><span style="color:var(--green); font-weight:700;">✓</span> Local use and local history</div>
+                    <div><span style="color:var(--green); font-weight:700;">✓</span> Loopback and LAN access</div>
+                    <div><span style="color:var(--green); font-weight:700;">✓</span> Direct device pairing</div>
+                    <div><span style="color:var(--green); font-weight:700;">✓</span> Your own tunnel: <span style="font-family:'JetBrains Mono',monospace; font-size:13.5px; color:var(--code);">forge serve --anywhere</span></div>
+                    <div><span style="color:var(--green); font-weight:700;">✓</span> Every model, mesh, and feature on this site</div>
+                  </div>
+                </div>
+                <div style="border:1px solid var(--border-hot); border-radius:12px; padding:30px 34px; background:var(--panel-hot);">
+                  <div style="display:flex; align-items:baseline; gap:12px;"><div style="font-weight:700; font-size:20px; color:var(--accent);">Anywhere adds</div><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted2);">optional · €79/yr</span></div>
+                  <div style="margin-top:18px; font-size:15px; line-height:2.15; color:var(--ink2);">
+                    <div><span style="color:var(--accent); font-weight:700;">＋</span> Managed encrypted relay, stable host identity</div>
+                    <div><span style="color:var(--accent); font-weight:700;">＋</span> Fleet of 3 hosts · unlimited personal devices</div>
+                    <div><span style="color:var(--accent); font-weight:700;">＋</span> 5 GB encrypted sync and offline history</div>
+                    <div><span style="color:var(--accent); font-weight:700;">＋</span> Remote jobs and generic push notifications</div>
+                    <div><span style="color:var(--accent); font-weight:700;">＋</span> Workspace handoff · encrypted replay shares</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 7 features -->
+          <section data-screen-label="feature grid" style="padding:84px 64px; border-top:1px solid var(--border); background:radial-gradient(900px 400px at 12% 0%, rgba(255,96,32,.06), transparent 60%);">
+            <div style="max-width:1060px; margin:0 auto;">
+              <h2 style="margin:0; font-size:42px; font-weight:700; letter-spacing:-.02em; max-width:720px;">Six things your desk <span style="color:var(--accent);">stops being needed for.</span></h2>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px;">
+                <div style="border:1px solid var(--border); border-radius:12px; padding:26px 28px; background:var(--panel);">
+                  <div style="font-weight:700; font-size:17px;">Live remote control</div>
+                  <p style="margin:8px 0 0; color:var(--muted2); font-size:14px; line-height:1.6;">The same session UI you have locally, over the relay. Approve, steer, interrupt — from any authorized device.</p>
+                  <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--code); background:#080610; border-radius:8px; padding:10px 14px;">transport: <span style="color:var(--accent);">Anywhere</span> · host: studio</div>
+                </div>
+                <div style="border:1px solid var(--border); border-radius:12px; padding:26px 28px; background:var(--panel);">
+                  <div style="font-weight:700; font-size:17px;">Encrypted sync &amp; offline history</div>
+                  <p style="margin:8px 0 0; color:var(--muted2); font-size:14px; line-height:1.6;">Sessions, checkpoints, memories, and settings sync as ciphertext. Browse history on the plane; it reconciles on landing.</p>
+                  <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--code); background:#080610; border-radius:8px; padding:10px 14px;">◌ offline · cached 2h ago · read-ok</div>
+                </div>
+                <div style="border:1px solid var(--border); border-radius:12px; padding:26px 28px; background:var(--panel);">
+                  <div style="font-weight:700; font-size:17px;">A personal host fleet</div>
+                  <p style="margin:8px 0 0; color:var(--muted2); font-size:14px; line-height:1.6;">Up to three machines with stable identity — desktop, laptop, homelab — visible and reachable from everywhere.</p>
+                  <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--code); background:#080610; border-radius:8px; padding:10px 14px;"><span style="color:var(--green);">●</span> studio <span style="color:var(--green);">●</span> laptop <span style="color:var(--dim);">○ homelab</span></div>
+                </div>
+                <div style="border:1px solid var(--border); border-radius:12px; padding:26px 28px; background:var(--panel);">
+                  <div style="font-weight:700; font-size:17px;">Remote jobs &amp; push</div>
+                  <p style="margin:8px 0 0; color:var(--muted2); font-size:14px; line-height:1.6;">Queue an encrypted task for a host from your phone. Push tells you something happened — never what.</p>
+                  <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--code); background:#080610; border-radius:8px; padding:10px 14px;">“Open Forge to view an update.”</div>
+                </div>
+                <div style="border:1px solid var(--border); border-radius:12px; padding:26px 28px; background:var(--panel);">
+                  <div style="font-weight:700; font-size:17px;">Workspace handoff</div>
+                  <p style="margin:8px 0 0; color:var(--muted2); font-size:14px; line-height:1.6;">Move an idle session and its safe workspace capsule to another host — preflighted, verified, with rollback if anything fails.</p>
+                  <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--code); background:#080610; border-radius:8px; padding:10px 14px;">studio → laptop · capsule ≤100 MB</div>
+                </div>
+                <div style="border:1px solid var(--border); border-radius:12px; padding:26px 28px; background:var(--panel);">
+                  <div style="font-weight:700; font-size:17px;">Replay shares</div>
+                  <p style="margin:8px 0 0; color:var(--muted2); font-size:14px; line-height:1.6;">Share a read-only, end-to-end encrypted session replay. It expires — 24 h, 7 d, or 30 d — and you can revoke it early.</p>
+                  <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--code); background:#080610; border-radius:8px; padding:10px 14px;">expires in 6d 23h · <span style="color:#F35C5C;">revoke</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8 security -->
+          <section data-screen-label="security and recovery" style="padding:84px 64px; border-top:1px solid var(--border);">
+            <div style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;">
+              <div>
+                <h2 style="margin:0; font-size:42px; font-weight:700; letter-spacing:-.02em;">Encrypted so well <span style="color:var(--accent);">even we can't peek.</span></h2>
+                <div style="margin-top:28px; display:flex; flex-direction:column; gap:18px; font-size:15px; line-height:1.6; color:var(--ink2);">
+                  <div><div style="font-weight:600; color:var(--ink);">Who can read your data?</div><div style="color:var(--muted2); margin-top:4px;">Only your authorized devices. Sessions, prompts, files, and diffs are encrypted before they leave a machine.</div></div>
+                  <div><div style="font-weight:600; color:var(--ink);">What does the service see?</div><div style="color:var(--muted2); margin-top:4px;">Routing identifiers, timestamps, sizes, object kinds, and signatures — enough to deliver ciphertext, nothing more.</div></div>
+                  <div><div style="font-weight:600; color:var(--ink);">Lost a device?</div><div style="color:var(--muted2); margin-top:4px;">Revoke it. Remaining devices rotate to a new key epoch; the lost device can't read anything written after.</div></div>
+                  <div><div style="font-weight:600; color:var(--ink);">Lost everything?</div><div style="color:var(--muted2); margin-top:4px;">If every authorized device <i>and</i> the recovery phrase are gone, your encrypted cloud content cannot be recovered — not even by support. Local Forge data is untouched.</div></div>
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:16px;">
+                <div style="border:1px solid var(--border2); border-radius:12px; background:var(--panel); padding:22px 26px;">
+                  <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted2); font-weight:700;">RECOVERY PHRASE · shown once, at setup</div>
+                  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--dim);">
+                    <span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">1 ▪▪▪▪▪</span><span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">2 ▪▪▪▪▪</span><span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">3 ▪▪▪▪▪</span><span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">4 ▪▪▪▪▪</span>
+                    <span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">5 ▪▪▪▪▪</span><span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">6 ▪▪▪▪▪</span><span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">7 ▪▪▪▪▪</span><span style="border:1px solid var(--border); border-radius:6px; padding:6px 9px;">8 ▪▪▪▪▪</span>
+                  </div>
+                  <p style="margin:13px 0 0; font-size:12.5px; line-height:1.6; color:var(--muted2);">Words 9–24 continue. Shown once at setup, never again — support cannot recover it. Real words never appear in marketing.</p>
+                </div>
+                <div style="border:1px solid var(--border2); border-radius:12px; background:var(--panel); padding:22px 26px;">
+                  <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted2); font-weight:700;">DEVICE KEYS</div>
+                  <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:2.1; color:var(--ink2);">
+                    <div><span style="color:var(--green);">●</span> studio <span style="color:var(--dim);">· wrapped account key</span></div>
+                    <div><span style="color:var(--green);">●</span> iphone <span style="color:var(--dim);">· wrapped account key</span></div>
+                    <div><span style="color:#F35C5C;">⊘</span> old-laptop <span style="color:var(--dim);">· revoked → key epoch 2</span></div>
+                  </div>
+                  <p style="margin:12px 0 0; font-size:12.5px; line-height:1.6; color:var(--muted2);">Revoking a device rotates future data to a new key epoch for the devices you keep.</p>
+                </div>
+                <details style="border:1px solid var(--border); border-radius:12px; background:var(--panel2);">
+                  <summary style="cursor:pointer; padding:15px 20px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted); font-weight:600;">For the inspectable: the exact primitives</summary>
+                  <div style="padding:0 20px 16px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:2; color:var(--code);">
+                    <div>key agreement · <span style="color:var(--ink2);">X25519</span></div>
+                    <div>signatures · <span style="color:var(--ink2);">Ed25519</span></div>
+                    <div>key derivation · <span style="color:var(--ink2);">HKDF-SHA256</span></div>
+                    <div>payload encryption · <span style="color:var(--ink2);">XChaCha20-Poly1305</span></div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </section>
+
+          <!-- 9 pricing -->
+          <section data-screen-label="pricing" style="padding:84px 64px; border-top:1px solid var(--border); background:radial-gradient(900px 420px at 88% 10%, rgba(255,96,32,.07), transparent 60%);">
+            <div style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;">
+              <div>
+                <h2 style="margin:0; font-size:42px; font-weight:700; letter-spacing:-.02em;">One plan. <span style="color:var(--accent);">Two ways to pay.</span></h2>
+                <p style="margin:18px 0 0; color:var(--muted); font-size:16px; line-height:1.65;">The toggle only changes cadence — every Anywhere feature is in the one plan. The 14-day trial needs no card and starts when your first host connects, not at signup.</p>
+                <div style="margin-top:24px; font-size:14.5px; line-height:2.1; color:var(--muted2);">
+                  <div><span style="color:var(--dim);">✕</span> No permanent hosted free tier</div>
+                  <div><span style="color:var(--dim);">✕</span> No lifetime deals, no advertising</div>
+                  <div><span style="color:var(--dim);">✕</span> No model hosting, no provider markup</div>
+                  <div style="color:var(--ink2);"><span style="color:var(--green);">✓</span> The subscription pays for relay and storage. That's it.</div>
+                </div>
+              </div>
+              <div style="border:1px solid var(--border-hot); border-radius:14px; background:var(--panel-hot); padding:30px 34px;">
+                <div role="radiogroup" aria-label="Billing period" style="display:flex; gap:5px; background:var(--track); border:1px solid var(--border2); border-radius:999px; padding:5px;">
+                  <span role="radio" aria-checked="{{ annualAria }}" tabIndex="0" onClick="{{ pickAnnual }}" style="flex:1; text-align:center; cursor:pointer; border-radius:999px; padding:11px 10px; font-size:14px; font-weight:700; background:{{ annualBg }}; color:{{ annualC }};">Annual · €79/yr</span>
+                  <span role="radio" aria-checked="{{ monthlyAria }}" tabIndex="0" onClick="{{ pickMonthly }}" style="flex:1; text-align:center; cursor:pointer; border-radius:999px; padding:11px 10px; font-size:14px; font-weight:700; background:{{ monthlyBg }}; color:{{ monthlyC }};">Monthly · €10/mo</span>
+                </div>
+                <div style="display:flex; align-items:baseline; gap:10px; margin-top:26px;">
+                  <span style="font-family:'Bricolage Grotesque',sans-serif; font-size:58px; font-weight:700; letter-spacing:-.02em; color:var(--ink);">{{ priceBig }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace; font-size:15px; color:var(--muted2);">{{ priceUnit }}</span>
+                </div>
+                <div style="margin-top:6px; font-size:13.5px; color:var(--muted2);">{{ priceNote }}</div>
+                <span style="display:flex; justify-content:center; align-items:center; gap:11px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:15px 26px; font-size:15.5px; margin-top:24px; box-shadow:0 0 26px rgba(255,138,48,.3);"><svg width="18" height="18" viewBox="0 0 16 16" fill="#12080A" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>Start 14-day trial with GitHub</span>
+                <div style="margin-top:14px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted2);">14 days · no card · trial starts at first host connection</div>
+                <div style="margin-top:10px; text-align:center; font-size:12px; color:var(--dim);">Billed by Paddle, merchant of record. Cancel anytime — local Forge is never affected.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 10 limits -->
+          <section data-screen-label="hard limits" style="padding:56px 64px; border-top:1px solid var(--border);">
+            <div style="max-width:1060px; margin:0 auto;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; color:var(--muted2);">HARD LIMITS · V1 IS FOR INDIVIDUAL DEVELOPERS</div>
+              <div data-cols5="1" style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:20px;">
+                <div style="border:1px solid var(--border); border-radius:10px; padding:18px 20px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:var(--accent);">3</div><div style="margin-top:4px; font-size:13px; color:var(--muted2);">active hosts in your fleet</div></div>
+                <div style="border:1px solid var(--border); border-radius:10px; padding:18px 20px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:var(--accent);">∞</div><div style="margin-top:4px; font-size:13px; color:var(--muted2);">personal controller devices</div></div>
+                <div style="border:1px solid var(--border); border-radius:10px; padding:18px 20px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:var(--accent);">5 GB</div><div style="margin-top:4px; font-size:13px; color:var(--muted2);">encrypted sync &amp; history</div></div>
+                <div style="border:1px solid var(--border); border-radius:10px; padding:18px 20px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:var(--accent);">100 MB</div><div style="margin-top:4px; font-size:13px; color:var(--muted2);">max workspace capsule, compressed</div></div>
+                <div style="border:1px solid var(--border); border-radius:10px; padding:18px 20px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:28px; font-weight:700; color:var(--accent);">24h·7d·30d</div><div style="margin-top:4px; font-size:13px; color:var(--muted2);">replay share expiry choices</div></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 11 continuity -->
+          <section data-screen-label="continuity reassurance" style="padding:84px 64px; border-top:1px solid var(--border);">
+            <div style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;">
+              <div>
+                <h2 style="margin:0; font-size:42px; font-weight:700; letter-spacing:-.02em;">If Anywhere stops, <span style="color:var(--accent);">Forge doesn't.</span></h2>
+                <p style="margin:18px 0 0; color:var(--muted); font-size:16px; line-height:1.65;">Anywhere is a layer on top of Forge, not underneath it. Whatever happens to the subscription or the service, your local sessions, history, LAN access, device pairing, and self-managed tunnels keep working exactly as before.</p>
+              </div>
+              <div style="border:1px solid var(--border2); border-radius:12px; background:var(--panel); overflow:hidden; font-size:14px;">
+                <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 22px; border-bottom:1px solid var(--border);"><span style="color:var(--muted2);">Trial expired</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:12.5px;">local Forge unaffected</span></div>
+                <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 22px; border-bottom:1px solid var(--border);"><span style="color:var(--muted2);">Payment failed / cancelled</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:12.5px;">local Forge unaffected</span></div>
+                <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 22px; border-bottom:1px solid var(--border);"><span style="color:var(--muted2);">Relay unreachable</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:12.5px;">LAN · pairing · your tunnel</span></div>
+                <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 22px; border-bottom:1px solid var(--border);"><span style="color:var(--muted2);">Over the 5 GB quota</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:12.5px;">local history intact</span></div>
+                <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 22px;"><span style="color:var(--muted2);">Anywhere switched off</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:12.5px;">Forge is just Forge</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 12 FAQ -->
+          <section data-screen-label="faq" style="padding:84px 64px; border-top:1px solid var(--border);">
+            <div style="max-width:1060px; margin:0 auto;">
+              <h2 style="margin:0; font-size:42px; font-weight:700; letter-spacing:-.02em;">Practical questions</h2>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:40px; align-items:start;">
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <details open style="border:1px solid var(--border2); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">What stays free?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">Everything Forge does today: CLI, TUI, daemon, local history, loopback and LAN access, direct device pairing, your own <span style="font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--code);">forge serve --anywhere</span> tunnel, and workspace export/import. Anywhere only adds the managed relay, sync, and handoff.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">When does the trial start?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">When your first host connects — not at signup. 14 days, no card, one trial per GitHub account.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">Can the service read my sessions?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">No. Devices encrypt before upload and decrypt after download. The service sees routing identifiers, timestamps, sizes, object kinds, and signatures — never plaintext prompts, commands, filenames, repository names, diffs, or transcripts.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">What if I lose the recovery phrase?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">While you still have an authorized device, you can re-authorize others. Lose every authorized device <i>and</i> the phrase, and encrypted cloud content is unrecoverable — support cannot restore it. Local data is untouched.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">What happens after cancellation or a failed payment?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">Anywhere features stop; nothing local breaks. Local Forge, LAN access, pairing, and your own tunnels keep working.</p></details>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">Does Anywhere replace Git or backups?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">No. Sync and handoff move Forge session state between your machines. Keep using Git and independent backups for your code.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">Can my team use it?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">V1 is for individual developers: one account, up to three hosts, unlimited personal devices. No seats or organizations yet.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">What happens above 5 GB?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">5 GB is a hard limit — new cloud sync waits until you clear space. Local Forge and local history are unaffected.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">Can I keep using my own tunnel?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">Yes. <span style="font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--code);">forge serve --anywhere</span> stays free and works with or without a subscription.</p></details>
+                  <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:16px 20px; font-weight:600; font-size:15px; color:var(--ink);">What if the service goes offline?</summary><p style="margin:0; padding:0 20px 16px; color:var(--muted2); font-size:14px; line-height:1.65;">Local Forge doesn't depend on the relay. Loopback, LAN, direct pairing, and self-managed tunnels keep working while it's down.</p></details>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 13 final CTA + footer -->
+          <section data-screen-label="final cta" style="padding:96px 64px 90px; border-top:1px solid var(--border); text-align:center; background:radial-gradient(900px 460px at 50% 120%, rgba(216,45,28,.24), rgba(255,96,32,.08) 40%, transparent 70%);">
+            <h2 style="margin:0 auto; max-width:680px; font-size:52px; font-weight:700; letter-spacing:-.02em; text-wrap:balance;">Leave the desk. <span style="color:var(--accent);">Keep the session.</span></h2>
+            <div style="display:flex; justify-content:center; align-items:center; gap:16px; margin-top:34px; flex-wrap:wrap;">
+              <span style="display:inline-flex; align-items:center; gap:11px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:15px 26px; font-size:16px; box-shadow:0 0 30px rgba(255,138,48,.35);"><svg width="19" height="19" viewBox="0 0 16 16" fill="#12080A" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>Start 14-day trial with GitHub</span>
+              <span style="border:1px solid var(--border2); border-radius:10px; padding:14px 22px; color:var(--ink2); font-size:15px;">Install Forge free</span>
+            </div>
+            <div style="margin-top:18px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted2);">€79/yr or €10/mo · 14 days, no card · trial starts at first host connection</div>
+            <div style="display:inline-flex; align-items:center; gap:10px; margin-top:24px; border:1px solid var(--green-bd); background:var(--green-bg); border-radius:999px; padding:9px 18px; font-size:13.5px; color:var(--ink2);"><span style="color:var(--green); font-weight:700;">✓</span> Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</div>
+          </section>
+          <footer style="display:flex; align-items:center; gap:28px; flex-wrap:wrap; padding:28px 64px; border-top:1px solid var(--border); font-size:13.5px; color:var(--dim);">
+            <span style="display:flex; align-items:center; gap:8px; color:var(--muted2);"><img src="assets/forge-logo.svg" alt="" style="width:20px; height:20px;"> Forge · AGPL-3.0</span>
+            <span style="margin-left:auto;"></span>
+            <span style="color:var(--muted2);">GitHub</span>
+            <span style="color:var(--muted2);">Docs</span>
+            <span style="color:var(--muted2);">Compare</span>
+            <span style="color:var(--muted2);">♥ Sponsor</span>
+            <span style="opacity:.4;" title="reserved slots — legal copy out of scope this pass">Privacy · Terms · Refunds</span>
+            <span>built with Rust</span>
+          </footer>
+        </div>
+      </div>
+
+      <!-- B notes -->
+      <div style="flex:none; width:300px; border:1px dashed #3A3448; border-radius:12px; padding:18px 20px; font-size:12.5px; line-height:1.65; color:#A8ADC0;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700; margin-bottom:8px;">IMPLEMENTATION NOTES · B</div>
+        <div>· Pricing is one radiogroup, annual pre-selected; both prices always visible in the segments. One primary button on the whole card. Toggle is live in this canvas — click it.</div>
+        <div style="margin-top:8px;">· FAQ + crypto detail use native <span style="font-family:'JetBrains Mono',monospace;">&lt;details&gt;</span> — keyboard and screen-reader operable with zero JS; page reads correctly with JS off.</div>
+        <div style="margin-top:8px;">· Heading order: h1 hero → h2 per section. Landmarks: header, main sections, footer.</div>
+        <div style="margin-top:8px;">· Device mocks in §5 are placeholder compositions — swap for approved app exports FA-01…FA-05 (list in group F). Navigation, status language, and control placement must come from the app project unchanged.</div>
+        <div style="margin-top:8px;">· Footer reserves Privacy · Terms · Refunds slots; legal copy out of scope.</div>
+        <div style="margin-top:8px;">· Reduced motion: flow lines and ember dots freeze; numbered steps carry the story. No security content is ever animated.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GROUP C · /ANYWHERE MOBILE + TABLET ============ -->
+  <div style="margin-top:72px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#FF8A30; font-weight:700;">C · /anywhere — mobile 390 &amp; tablet 1024</div>
+    <div style="display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap; margin-top:16px;">
+
+      <!-- C1 mobile -->
+      <div style="flex:none;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#8B90A5; margin-bottom:8px;">C1 · complete page · 390w · demo becomes an ordered vertical sequence</div>
+        <div data-forge-root="1" data-theme="dark" data-screen-label="C1 /anywhere mobile" style="width:390px; border:1px solid #2A2436; border-radius:14px; overflow:hidden; background:var(--bg); color:var(--ink);">
+          <div style="display:flex; justify-content:center; padding:14px 16px 0;">
+            <nav style="display:flex; align-items:center; gap:8px; width:100%; padding:8px 8px 8px 16px; border-radius:999px; background:var(--capsule); border:1px solid rgba(255,138,48,.22);">
+              <img src="assets/forge-logo.svg" alt="Forge" style="width:24px; height:24px;"><span style="font-weight:700; font-size:15px;">Forge</span>
+              <span style="margin-left:auto; background:#FF8A30; color:#12080A; font-weight:700; border-radius:999px; padding:8px 16px; font-size:13px;">Install</span>
+              <span style="color:var(--ink); font-size:17px; padding:6px 10px;">≡</span>
+            </nav>
+          </div>
+          <header style="padding:52px 22px 44px; text-align:center; background:radial-gradient(500px 320px at 50% 120%, rgba(216,45,28,.26), transparent 70%);">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.13em; color:var(--accent);">OPTIONAL · END-TO-END ENCRYPTED</div>
+            <h1 style="margin:14px 0 0; font-size:40px; line-height:1.05; font-weight:700; letter-spacing:-.02em;">Your Forge sessions, <span style="color:var(--accent);">everywhere.</span></h1>
+            <p style="margin:14px 0 0; color:var(--muted); font-size:15.5px; line-height:1.55;">Leave your desk without leaving your Forge session.</p>
+            <span style="display:flex; justify-content:center; align-items:center; gap:10px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:15px 20px; font-size:15px; margin-top:24px;"><svg width="18" height="18" viewBox="0 0 16 16" fill="#12080A" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>Start 14-day trial with GitHub</span>
+            <div style="margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted2);">14 days · no card · starts at first host connection</div>
+            <div style="display:inline-flex; gap:8px; margin-top:18px; border:1px solid var(--green-bd); background:var(--green-bg); border-radius:12px; padding:10px 14px; font-size:12.5px; line-height:1.5; color:var(--ink2); text-align:left;"><span style="color:var(--green); font-weight:700;">✓</span><span>Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</span></div>
+          </header>
+          <section style="padding:8px 22px 44px;">
+            <div style="border:1px solid #26262E; border-radius:10px; background:#0C0E16; overflow:hidden;">
+              <div style="display:flex; align-items:center; gap:6px; padding:9px 13px; background:#0E0F15; border-bottom:1px solid #1E2233;"><span style="width:8px;height:8px;border-radius:50%;background:#F35C5C;"></span><span style="width:8px;height:8px;border-radius:50%;background:#EEBC52;"></span><span style="width:8px;height:8px;border-radius:50%;background:#5CD07A;"></span><span style="margin-left:6px; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">forge chat · studio</span></div>
+              <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.9; color:#A9A9B6;">
+                <div><span style="color:#4BD4DA;">● edit</span> src/auth/refresh.rs <span style="color:#5CD07A;">+42</span> <span style="color:#F35C5C;">−3</span></div>
+                <div><span style="background:#FF8A30; color:#0E0F15; font-weight:700; padding:1px 7px;">◉ PERMISSION</span> <span style="color:#EEBC52;">cargo test</span></div>
+              </div>
+              <div style="padding:7px 13px; background:#0E0F15; border-top:1px solid #1E2233; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">1 · begins on <span style="color:#E9E9EF;">desktop</span></div>
+            </div>
+            <div style="width:2px; height:24px; margin:0 auto; background:linear-gradient(180deg,transparent,#FF8A30,transparent);"></div>
+            <div style="border:1px solid #34343E; border-radius:18px; background:#0B0B10; overflow:hidden;">
+              <div style="margin:12px 12px 0; background:#1B1B22; border-radius:9px; padding:9px 11px;"><div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6E6E7A;">notification</div><div style="font-size:11.5px; color:#E9E9EF; margin-top:3px;">Open Forge to view an update.</div></div>
+              <div style="margin:9px 12px 0; background:#2E2415; border-radius:9px; padding:10px 12px;">
+                <div style="font-size:11.5px; font-weight:600; color:#E9E9EF;">harden token refresh</div>
+                <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:#6E6E7A; margin-top:3px;">host: studio · <span style="color:#FF913C;">Anywhere</span> · encrypted</div>
+                <div style="display:flex; gap:6px; margin-top:8px;"><span style="flex:1; text-align:center; background:#7DD394; color:#1B1B22; font-weight:700; font-size:10.5px; border-radius:7px; padding:9px 0;">Allow</span><span style="flex:1; text-align:center; background:#F0716E; color:#1B1B22; font-weight:700; font-size:10.5px; border-radius:7px; padding:9px 0;">Deny</span></div>
+              </div>
+              <div style="padding:9px 13px 11px; font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">2 · answered from <span style="color:#E9E9EF;">iPhone</span></div>
+            </div>
+            <div style="width:2px; height:24px; margin:0 auto; background:linear-gradient(180deg,transparent,#4BD4DA,transparent);"></div>
+            <div style="border:1px solid var(--green-bd); border-radius:10px; background:var(--green-bg);">
+              <div style="padding:13px 15px;">
+                <div style="font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--green); font-weight:700;">✓ WORKSPACE HANDOFF</div>
+                <div style="font-size:12.5px; color:var(--ink2); margin-top:5px; line-height:1.5;">capsule 8.2 MB verified · lease → laptop</div>
+              </div>
+              <div style="padding:7px 15px 9px; border-top:1px solid var(--green-bd); font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C;">3 · continues on <span style="color:#E9E9EF;">laptop</span></div>
+            </div>
+          </section>
+          <section style="padding:44px 22px; border-top:1px solid var(--border);">
+            <h2 style="margin:0; font-size:27px; font-weight:700; letter-spacing:-.02em;">Forge is free. <span style="color:var(--accent);">Anywhere adds the relay.</span></h2>
+            <div style="border:1px solid var(--border2); border-radius:10px; padding:18px 20px; background:var(--panel); margin-top:22px;">
+              <div style="font-weight:700; font-size:15.5px;">Forge — free, forever <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--cy); font-weight:400;">AGPL-3.0</span></div>
+              <div style="margin-top:10px; font-size:13.5px; line-height:2; color:var(--ink2);"><div><span style="color:var(--green);">✓</span> Local use, history, LAN, pairing</div><div><span style="color:var(--green);">✓</span> Your own tunnel: <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--code);">forge serve --anywhere</span></div><div><span style="color:var(--green);">✓</span> Every model and feature on this site</div></div>
+            </div>
+            <div style="border:1px solid var(--border-hot); border-radius:10px; padding:18px 20px; background:var(--panel-hot); margin-top:12px;">
+              <div style="font-weight:700; font-size:15.5px; color:var(--accent);">Anywhere adds <span style="font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted2); font-weight:400;">optional · €79/yr</span></div>
+              <div style="margin-top:10px; font-size:13.5px; line-height:2; color:var(--ink2);"><div><span style="color:var(--accent);">＋</span> Managed encrypted relay · 3 hosts</div><div><span style="color:var(--accent);">＋</span> 5 GB encrypted sync · remote jobs · push</div><div><span style="color:var(--accent);">＋</span> Workspace handoff · replay shares</div></div>
+            </div>
+          </section>
+          <section style="padding:44px 22px; border-top:1px solid var(--border);">
+            <h2 style="margin:0; font-size:27px; font-weight:700; letter-spacing:-.02em;">Six things your desk <span style="color:var(--accent);">stops being needed for.</span></h2>
+            <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+              <div style="border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:var(--panel);"><div style="font-weight:700; font-size:14.5px;">Live remote control</div><div style="color:var(--muted2); font-size:13px; margin-top:3px; line-height:1.55;">The same session UI, over the relay, from any authorized device.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:var(--panel);"><div style="font-weight:700; font-size:14.5px;">Encrypted sync &amp; offline history</div><div style="color:var(--muted2); font-size:13px; margin-top:3px; line-height:1.55;">History syncs as ciphertext; readable on the plane.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:var(--panel);"><div style="font-weight:700; font-size:14.5px;">A personal host fleet</div><div style="color:var(--muted2); font-size:13px; margin-top:3px; line-height:1.55;">Up to three machines with stable identity, reachable anywhere.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:var(--panel);"><div style="font-weight:700; font-size:14.5px;">Remote jobs &amp; push</div><div style="color:var(--muted2); font-size:13px; margin-top:3px; line-height:1.55;">Queue tasks from your phone. Push says something happened — never what.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:var(--panel);"><div style="font-weight:700; font-size:14.5px;">Workspace handoff</div><div style="color:var(--muted2); font-size:13px; margin-top:3px; line-height:1.55;">Move an idle session to another host — verified, with rollback.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:14px 16px; background:var(--panel);"><div style="font-weight:700; font-size:14.5px;">Replay shares</div><div style="color:var(--muted2); font-size:13px; margin-top:3px; line-height:1.55;">Read-only encrypted replays that expire in 24 h, 7 d, or 30 d.</div></div>
+            </div>
+          </section>
+          <section style="padding:44px 22px; border-top:1px solid var(--border);">
+            <h2 style="margin:0; font-size:27px; font-weight:700; letter-spacing:-.02em;">Encrypted so well <span style="color:var(--accent);">even we can't peek.</span></h2>
+            <div style="margin-top:16px; font-size:13.5px; line-height:1.6; color:var(--muted2);">Devices encrypt before upload and decrypt after download. The service sees routing identifiers, timestamps, sizes, and signatures — never prompts, commands, filenames, repos, diffs, or transcripts.</div>
+            <div style="border:1px solid var(--border2); border-radius:10px; background:var(--panel); padding:16px 18px; margin-top:16px;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted2); font-weight:700;">RECOVERY PHRASE · 24 WORDS · SHOWN ONCE</div>
+              <div style="font-size:12.5px; line-height:1.6; color:var(--muted2); margin-top:8px;">Support cannot recover it. Lose every device and the phrase, and encrypted cloud content is gone — local Forge data is untouched.</div>
+            </div>
+          </section>
+          <section style="padding:44px 22px; border-top:1px solid var(--border);">
+            <h2 style="margin:0; font-size:27px; font-weight:700; letter-spacing:-.02em;">One plan. <span style="color:var(--accent);">Two ways to pay.</span></h2>
+            <div style="border:1px solid var(--border-hot); border-radius:12px; background:var(--panel-hot); padding:20px; margin-top:20px;">
+              <div role="radiogroup" aria-label="Billing period" style="display:flex; gap:5px; background:var(--track); border:1px solid var(--border2); border-radius:999px; padding:4px;">
+                <span style="flex:1; text-align:center; border-radius:999px; padding:11px 6px; font-size:12.5px; font-weight:700; background:#FF8A30; color:#12080A;">Annual · €79/yr</span>
+                <span style="flex:1; text-align:center; border-radius:999px; padding:11px 6px; font-size:12.5px; color:var(--muted);">Monthly · €10/mo</span>
+              </div>
+              <div style="display:flex; align-items:baseline; gap:8px; margin-top:18px;"><span style="font-family:'Bricolage Grotesque',sans-serif; font-size:44px; font-weight:700; color:var(--ink);">€79</span><span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted2);">/year</span></div>
+              <span style="display:flex; justify-content:center; align-items:center; gap:9px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:14px 18px; font-size:14px; margin-top:16px;">Start 14-day trial with GitHub</span>
+              <div style="margin-top:11px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted2);">no card · trial starts at first host connection</div>
+              <div style="margin-top:8px; text-align:center; font-size:11px; color:var(--dim);">Billed by Paddle · cancel anytime</div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px;">
+              <div style="border:1px solid var(--border); border-radius:10px; padding:13px 15px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; color:var(--accent);">3</div><div style="font-size:11.5px; color:var(--muted2); margin-top:2px;">active hosts</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:13px 15px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; color:var(--accent);">∞</div><div style="font-size:11.5px; color:var(--muted2); margin-top:2px;">personal devices</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:13px 15px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; color:var(--accent);">5 GB</div><div style="font-size:11.5px; color:var(--muted2); margin-top:2px;">encrypted storage</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:13px 15px; background:var(--panel);"><div style="font-family:'Bricolage Grotesque',sans-serif; font-size:21px; font-weight:700; color:var(--accent);">1</div><div style="font-size:11.5px; color:var(--muted2); margin-top:2px;">developer · personal v1</div></div>
+            </div>
+          </section>
+          <section style="padding:44px 22px; border-top:1px solid var(--border);">
+            <h2 style="margin:0; font-size:27px; font-weight:700; letter-spacing:-.02em;">If Anywhere stops, <span style="color:var(--accent);">Forge doesn't.</span></h2>
+            <div style="border:1px solid var(--border2); border-radius:10px; background:var(--panel); overflow:hidden; font-size:12.5px; margin-top:18px;">
+              <div style="display:flex; justify-content:space-between; gap:10px; padding:12px 16px; border-bottom:1px solid var(--border);"><span style="color:var(--muted2);">Expired / unpaid</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:11px;">local unaffected</span></div>
+              <div style="display:flex; justify-content:space-between; gap:10px; padding:12px 16px; border-bottom:1px solid var(--border);"><span style="color:var(--muted2);">Relay unreachable</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:11px;">LAN · pairing · tunnel</span></div>
+              <div style="display:flex; justify-content:space-between; gap:10px; padding:12px 16px;"><span style="color:var(--muted2);">Over quota / disabled</span><span style="color:var(--green); font-family:'JetBrains Mono',monospace; font-size:11px;">Forge is just Forge</span></div>
+            </div>
+          </section>
+          <section style="padding:44px 22px; border-top:1px solid var(--border);">
+            <h2 style="margin:0 0 18px; font-size:27px; font-weight:700; letter-spacing:-.02em;">Practical questions</h2>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <details open style="border:1px solid var(--border2); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">What stays free?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">Everything Forge does today — CLI, TUI, daemon, local history, LAN, pairing, your own tunnel. Anywhere adds only the managed relay, sync, and handoff.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">When does the trial start?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">When your first host connects — not at signup. 14 days, no card, one per GitHub account.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Can the service read my sessions?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">No — devices encrypt before upload. The service sees routing metadata and signatures, never plaintext.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Lost recovery phrase?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">With a device left, re-authorize others. With nothing left, encrypted cloud content is unrecoverable; local data is untouched.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">After cancellation or failed payment?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">Anywhere features stop; local Forge, LAN, pairing, and your tunnels keep working.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Replace Git or backups?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">No. It moves Forge session state. Keep Git and independent backups.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Team use?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">V1 is personal only — no seats or organizations yet.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Above 5 GB?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">Hard limit — new sync waits until you clear space. Local history is unaffected.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Keep my own tunnel?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">Yes — <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--code);">forge serve --anywhere</span> stays free, subscription or not.</p></details>
+              <details style="border:1px solid var(--border); border-radius:10px; background:var(--panel);"><summary style="cursor:pointer; padding:14px 16px; font-weight:600; font-size:14px; color:var(--ink);">Service offline?</summary><p style="margin:0; padding:0 16px 14px; color:var(--muted2); font-size:13px; line-height:1.6;">Local Forge doesn't depend on the relay — loopback, LAN, pairing, and your tunnels keep working.</p></details>
+            </div>
+          </section>
+          <section style="padding:56px 22px 48px; border-top:1px solid var(--border); text-align:center; background:radial-gradient(400px 280px at 50% 120%, rgba(216,45,28,.24), transparent 70%);">
+            <h2 style="margin:0; font-size:32px; font-weight:700; letter-spacing:-.02em;">Leave the desk. <span style="color:var(--accent);">Keep the session.</span></h2>
+            <span style="display:flex; justify-content:center; align-items:center; gap:9px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:15px 18px; font-size:14.5px; margin-top:22px;">Start 14-day trial with GitHub</span>
+            <span style="display:flex; justify-content:center; align-items:center; border:1px solid var(--border2); border-radius:10px; padding:13px 18px; color:var(--ink2); font-size:14px; margin-top:10px;">Install Forge free</span>
+            <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted2);">€79/yr or €10/mo · 14 days, no card</div>
+          </section>
+          <footer style="display:flex; flex-direction:column; gap:10px; padding:22px; border-top:1px solid var(--border); font-size:12.5px; color:var(--dim);">
+            <span style="display:flex; align-items:center; gap:8px; color:var(--muted2);"><img src="assets/forge-logo.svg" alt="" style="width:18px; height:18px;"> Forge · AGPL-3.0</span>
+            <div style="display:flex; gap:16px; flex-wrap:wrap; color:var(--muted2);"><span>GitHub</span><span>Docs</span><span>Compare</span><span>♥ Sponsor</span><span style="opacity:.4;">Privacy · Terms · Refunds</span></div>
+          </footer>
+        </div>
+      </div>
+
+      <!-- C2 tablet -->
+      <div style="flex:none;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#8B90A5; margin-bottom:8px;">C2 · tablet 1024 · key collapses only — remaining sections match desktop at 48px gutters</div>
+        <div data-forge-root="1" data-theme="dark" data-screen-label="C2 /anywhere tablet" style="width:1024px; border:1px solid #2A2436; border-radius:14px; overflow:hidden; background:var(--bg); color:var(--ink);">
+          <header style="padding:72px 48px 56px; text-align:center; background:radial-gradient(800px 420px at 50% 120%, rgba(216,45,28,.26), transparent 70%);">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:.14em; color:var(--accent);">OPTIONAL PAID COMPANION · END-TO-END ENCRYPTED</div>
+            <h1 style="margin:16px 0 0; font-size:56px; line-height:1.03; font-weight:700; letter-spacing:-.02em;">Your Forge sessions, <span style="color:var(--accent);">everywhere.</span></h1>
+            <p style="margin:18px auto 0; max-width:560px; color:var(--muted); font-size:18px; line-height:1.55;">Leave your desk without leaving your Forge session.</p>
+            <div style="display:flex; justify-content:center; gap:14px; margin-top:28px; flex-wrap:wrap;">
+              <span style="display:inline-flex; align-items:center; gap:10px; background:#FF8A30; color:#12080A; font-weight:700; border-radius:10px; padding:14px 24px; font-size:15px;">Start 14-day trial with GitHub</span>
+              <span style="border:1px solid var(--border2); border-radius:10px; padding:13px 20px; color:var(--ink2); font-size:14px;">See what stays free ↓</span>
+            </div>
+            <div style="margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted2);">14 days · no card · trial starts at first host connection</div>
+          </header>
+          <section style="padding:16px 48px 64px;">
+            <div style="display:grid; grid-template-columns:1.2fr .8fr 1fr; gap:16px; align-items:stretch;">
+              <div style="border:1px solid #26262E; border-radius:10px; background:#0C0E16; padding:14px 16px;"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#52576C;">1 · desktop</div><div style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#A9A9B6; margin-top:8px; line-height:1.9;"><div><span style="color:#4BD4DA;">● edit</span> refresh.rs <span style="color:#5CD07A;">+42</span></div><div><span style="color:#EEBC52;">◉ waiting on permission…</span></div></div></div>
+              <div style="border:1px solid #34343E; border-radius:14px; background:#0B0B10; padding:14px 16px;"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#52576C;">2 · iPhone</div><div style="background:#2E2415; border-radius:8px; padding:9px 11px; margin-top:8px;"><div style="font-size:11.5px; font-weight:600; color:#E9E9EF;">harden token refresh</div><div style="display:flex; gap:6px; margin-top:8px;"><span style="flex:1; text-align:center; background:#7DD394; color:#1B1B22; font-weight:700; font-size:10.5px; border-radius:6px; padding:7px 0;">Allow</span><span style="flex:1; text-align:center; background:#F0716E; color:#1B1B22; font-weight:700; font-size:10.5px; border-radius:6px; padding:7px 0;">Deny</span></div></div></div>
+              <div style="border:1px solid var(--green-bd); border-radius:10px; background:var(--green-bg); padding:14px 16px;"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#52576C;">3 · laptop</div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--green); font-weight:700; margin-top:8px;">✓ HANDOFF COMPLETE</div><div style="font-size:12.5px; color:var(--ink2); margin-top:5px;">capsule verified · continue here</div></div>
+            </div>
+          </section>
+          <section style="padding:56px 48px 64px; border-top:1px solid var(--border);">
+            <h2 style="margin:0; font-size:34px; font-weight:700; letter-spacing:-.02em;">Six things your desk <span style="color:var(--accent);">stops being needed for.</span></h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px;">
+              <div style="border:1px solid var(--border); border-radius:10px; padding:20px 22px; background:var(--panel);"><div style="font-weight:700; font-size:15.5px;">Live remote control</div><div style="color:var(--muted2); font-size:13.5px; margin-top:4px;">The same session UI, over the relay.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:20px 22px; background:var(--panel);"><div style="font-weight:700; font-size:15.5px;">Encrypted sync &amp; offline history</div><div style="color:var(--muted2); font-size:13.5px; margin-top:4px;">Ciphertext sync; readable offline.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:20px 22px; background:var(--panel);"><div style="font-weight:700; font-size:15.5px;">A personal host fleet</div><div style="color:var(--muted2); font-size:13.5px; margin-top:4px;">Three machines, stable identity.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:20px 22px; background:var(--panel);"><div style="font-weight:700; font-size:15.5px;">Remote jobs &amp; push</div><div style="color:var(--muted2); font-size:13.5px; margin-top:4px;">Push never carries content.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:20px 22px; background:var(--panel);"><div style="font-weight:700; font-size:15.5px;">Workspace handoff</div><div style="color:var(--muted2); font-size:13.5px; margin-top:4px;">Verified capsule, rollback on failure.</div></div>
+              <div style="border:1px solid var(--border); border-radius:10px; padding:20px 22px; background:var(--panel);"><div style="font-weight:700; font-size:15.5px;">Replay shares</div><div style="color:var(--muted2); font-size:13.5px; margin-top:4px;">Expiring, revocable, read-only.</div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- C notes -->
+      <div style="flex:none; width:300px; border:1px dashed #3A3448; border-radius:12px; padding:18px 20px; font-size:12.5px; line-height:1.65; color:#A8ADC0;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700; margin-bottom:8px;">RESPONSIVE NOTES · C</div>
+        <div>· 390: demo becomes a vertical ordered sequence (semantically an <span style="font-family:'JetBrains Mono',monospace;">&lt;ol&gt;</span>); features and boundary stack; pricing card first, limits grid 2×2 under it.</div>
+        <div style="margin-top:8px;">· 1024: demo stays 3-up without connector lanes; features drop to 2 columns; security + pricing keep 2-col; gutters 48px.</div>
+        <div style="margin-top:8px;">· All tap targets ≥44px on mobile (CTAs, segments, summaries).</div>
+        <div style="margin-top:8px;">· Long localized strings: buttons wrap, no fixed heights, headlines use text-wrap balance. At 200% zoom layout follows the 390 rules.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GROUP D · LIGHT THEME ============ -->
+  <div style="margin-top:72px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#FF8A30; font-weight:700;">D · light theme — same tokens, trust-critical sections</div>
+    <div style="display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap; margin-top:16px;">
+      <div style="flex:none;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#8B90A5; margin-bottom:8px;">D1 · /anywhere hero + boundary + pricing · 1200w · terminal chrome intentionally stays dark</div>
+        <div data-forge-root="1" data-theme="light" data-screen-label="D1 /anywhere light" style="width:1200px; border:1px solid #2A2436; border-radius:14px; overflow:hidden; background:var(--bg); color:var(--ink);">
+          <header style="padding:80px 56px 60px; text-align:center; background:radial-gradient(900px 460px at 50% 125%, rgba(216,45,28,.14), rgba(255,96,32,.05) 40%, transparent 70%);">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.14em; color:var(--accent);">OPTIONAL PAID COMPANION · END-TO-END ENCRYPTED</div>
+            <h1 style="margin:16px 0 0; font-size:62px; line-height:1.02; font-weight:700; letter-spacing:-.02em;">Your Forge sessions, <span style="color:var(--accent);">everywhere.</span></h1>
+            <p style="margin:20px auto 0; max-width:600px; color:var(--muted); font-size:19px; line-height:1.55;">Leave your desk without leaving your Forge session.</p>
+            <div style="display:flex; justify-content:center; align-items:center; gap:16px; margin-top:32px; flex-wrap:wrap;">
+              <span style="display:inline-flex; align-items:center; gap:10px; background:#B65108; color:#FAF8F4; font-weight:700; border-radius:10px; padding:15px 26px; font-size:15.5px;">Start 14-day trial with GitHub</span>
+              <span style="border:1px solid var(--border2); border-radius:10px; padding:14px 22px; color:var(--ink2); font-size:15px;">See what stays free ↓</span>
+            </div>
+            <div style="margin-top:15px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted2);">14 days · no card · trial starts at first host connection</div>
+            <div style="display:inline-flex; align-items:center; gap:10px; margin-top:24px; border:1px solid var(--green-bd); background:var(--green-bg); border-radius:999px; padding:9px 18px; font-size:13.5px; color:var(--ink2);"><span style="color:var(--green); font-weight:700;">✓</span> Forge stays open source and free. Anywhere is optional and end-to-end encrypted.</div>
+          </header>
+          <section style="padding:64px 56px; border-top:1px solid var(--border);">
+            <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div style="border:1px solid var(--border2); border-radius:12px; padding:26px 30px; background:var(--panel);">
+                <div style="display:flex; align-items:baseline; gap:12px;"><div style="font-weight:700; font-size:18px;">Forge — free, forever</div><span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--cy);">AGPL-3.0</span></div>
+                <div style="margin-top:14px; font-size:14.5px; line-height:2.1; color:var(--ink2);"><div><span style="color:var(--green); font-weight:700;">✓</span> Local use, history, LAN, pairing</div><div><span style="color:var(--green); font-weight:700;">✓</span> Your own tunnel: <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">forge serve --anywhere</span></div><div><span style="color:var(--green); font-weight:700;">✓</span> Every model, mesh, and feature</div></div>
+              </div>
+              <div style="border:1px solid var(--border-hot); border-radius:12px; padding:26px 30px; background:var(--panel-hot);">
+                <div style="display:flex; align-items:baseline; gap:12px;"><div style="font-weight:700; font-size:18px; color:var(--accent);">Anywhere adds</div><span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted2);">optional · €79/yr</span></div>
+                <div style="margin-top:14px; font-size:14.5px; line-height:2.1; color:var(--ink2);"><div><span style="color:var(--accent); font-weight:700;">＋</span> Managed encrypted relay · 3 hosts</div><div><span style="color:var(--accent); font-weight:700;">＋</span> 5 GB sync · remote jobs · push</div><div><span style="color:var(--accent); font-weight:700;">＋</span> Handoff · expiring replay shares</div></div>
+              </div>
+            </div>
+          </section>
+          <section style="padding:64px 56px; border-top:1px solid var(--border);">
+            <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+              <div>
+                <h2 style="margin:0; font-size:36px; font-weight:700; letter-spacing:-.02em;">One plan. <span style="color:var(--accent);">Two ways to pay.</span></h2>
+                <p style="margin:16px 0 0; color:var(--muted); font-size:15px; line-height:1.65;">Annual pre-selected; both prices always visible. Contrast re-checked on light tokens — accent shifts to <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--code);">#B65108</span> for AA on cream.</p>
+              </div>
+              <div style="border:1px solid var(--border-hot); border-radius:14px; background:var(--panel-hot); padding:26px 30px;">
+                <div style="display:flex; gap:5px; background:var(--track); border:1px solid var(--border2); border-radius:999px; padding:5px;">
+                  <span style="flex:1; text-align:center; border-radius:999px; padding:10px 8px; font-size:13.5px; font-weight:700; background:#B65108; color:#FAF8F4;">Annual · €79/yr</span>
+                  <span style="flex:1; text-align:center; border-radius:999px; padding:10px 8px; font-size:13.5px; color:var(--muted);">Monthly · €10/mo</span>
+                </div>
+                <div style="display:flex; align-items:baseline; gap:9px; margin-top:20px;"><span style="font-family:'Bricolage Grotesque',sans-serif; font-size:48px; font-weight:700; color:var(--ink);">€79</span><span style="font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--muted2);">/year</span></div>
+                <span style="display:flex; justify-content:center; align-items:center; gap:10px; background:#B65108; color:#FAF8F4; font-weight:700; border-radius:10px; padding:14px 22px; font-size:14.5px; margin-top:20px;">Start 14-day trial with GitHub</span>
+                <div style="margin-top:12px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted2);">14 days · no card · starts at first host connection</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GROUP E · CONTINUITY STORYBOARD ============ -->
+  <div style="margin-top:72px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#FF8A30; font-weight:700;">E · continuity storyboard — 60–90s motion, readable as statics</div>
+    <div style="display:flex; gap:16px; align-items:stretch; flex-wrap:wrap; margin-top:16px;">
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">01 · DESKTOP · 0:00</div>
+        <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; line-height:1.9; color:#A9A9B6; flex:1;"><div><span style="color:#7AB7FF;">you</span> harden token refresh</div><div><span style="color:#4BD4DA;">● edit</span> refresh.rs <span style="color:#5CD07A;">+42</span></div><div><span style="color:#4BD4DA;">● bash</span> cargo check <span style="color:#5CD07A;">ok</span></div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">A real session is mid-flight on the desktop.</div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">02 · AWAY · 0:08</div>
+        <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; line-height:1.9; color:#52576C; flex:1;"><div>session continues…</div><div><span style="color:var(--green);">●</span> relay connected</div><div>screen locked</div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">The developer leaves the desk. Nothing pauses.</div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">03 · PUSH · 0:15</div>
+        <div style="padding:12px 14px; flex:1;"><div style="background:#1B1B22; border-radius:8px; padding:9px 11px;"><div style="font-family:'JetBrains Mono',monospace; font-size:8.5px; color:#6E6E7A;">FORGE · now</div><div style="font-size:11px; color:#E9E9EF; margin-top:3px;">Open Forge to view an update.</div></div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">Generic alert — the push never says what happened.</div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">04 · IPHONE · 0:22</div>
+        <div style="padding:12px 14px; flex:1;"><div style="background:#2E2415; border-radius:8px; padding:9px 11px;"><div style="font-size:11px; font-weight:600; color:#E9E9EF;">harden token refresh</div><div style="font-family:'JetBrains Mono',monospace; font-size:8.5px; color:#6E6E7A; margin-top:3px;">host: studio · live via relay</div></div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">The Forge app opens the same live session. <span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--dim);">export FA-03</span></div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">05 · APPROVE · 0:30</div>
+        <div style="padding:12px 14px; flex:1;"><div style="display:flex; gap:6px;"><span style="flex:1; text-align:center; background:#7DD394; color:#1B1B22; font-weight:700; font-size:10.5px; border-radius:7px; padding:9px 0; outline:2px solid #E9E9EF; outline-offset:2px;">Allow</span><span style="flex:1; text-align:center; background:#F0716E; color:#1B1B22; font-weight:700; font-size:10.5px; border-radius:7px; padding:9px 0;">Deny</span></div><div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#52576C; margin-top:10px;">→ studio resumes cargo test</div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">One tap answers the permission; the desktop continues.</div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">06 · CHECKPOINT · 0:44</div>
+        <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; line-height:1.9; color:#A9A9B6; flex:1;"><div><span style="color:#5CD07A;">✓</span> tests pass · 214/214</div><div><span style="color:var(--gold);">◈</span> idle checkpoint reached</div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">The session settles at a safe, idle checkpoint.</div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">07 · HANDOFF · 0:52</div>
+        <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; line-height:1.9; color:#A9A9B6; flex:1;"><div>handoff studio → laptop</div><div><span style="color:#4BD4DA;">●</span> preflight ok · lease free</div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">The developer initiates handoff to the laptop. <span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--dim);">export FA-04</span></div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--accent); font-weight:700;">08 · CAPSULE · 1:00</div>
+        <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; line-height:1.9; color:#A9A9B6; flex:1;"><div><span style="color:#5CD07A;">✓</span> packaged · 8.2 MB</div><div><span style="color:#5CD07A;">✓</span> verified · acknowledged</div><div><span style="color:#5CD07A;">✓</span> transferred, encrypted</div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">Prepare → verify → acknowledge → transfer, shown in order.</div>
+      </div>
+      <div data-forge-root="1" data-theme="dark" style="flex:none; width:236px; border:1px solid #2A2436; border-radius:12px; background:var(--bg); color:var(--ink); overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:10px 14px; border-bottom:1px solid var(--border); font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--green); font-weight:700;">09 · LAPTOP · 1:10</div>
+        <div style="padding:12px 14px; font-family:'JetBrains Mono',monospace; font-size:10.5px; line-height:1.9; color:#A9A9B6; flex:1;"><div><span style="color:#5CD07A;">✓</span> same session, same state</div><div><span style="color:#7AB7FF;">you</span> <span style="animation:blink 1.1s step-end infinite;">▍</span></div></div>
+        <div style="padding:9px 14px; border-top:1px solid var(--border); font-size:11px; color:var(--muted2); line-height:1.5;">Work continues on the laptop as if nothing moved. <span style="font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--dim);">export FA-05</span></div>
+      </div>
+      <div style="flex:none; width:300px; border:1px dashed #3A3448; border-radius:12px; padding:18px 20px; font-size:12.5px; line-height:1.65; color:#A8ADC0;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700; margin-bottom:8px;">MOTION NOTES · E</div>
+        <div>· Total runtime 60–90s; each beat transition ≤600ms ease-out; the update literally travels desktop→phone along the flow line, and the capsule travels desktop→laptop.</div>
+        <div style="margin-top:8px;">· Interruptible at any point — scroll or tap skips to the static frame; playback never traps focus.</div>
+        <div style="margin-top:8px;">· Reduced motion / JS off: this exact numbered strip is the fallback; timestamps + numbers carry sequence without animation.</div>
+        <div style="margin-top:8px;">· Nothing security-sensitive is animated: no recovery words, secrets, QR payloads, prompts, filenames, repos, diffs, or transcripts appear anywhere in the story.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ GROUP F · EXPORTS + A11Y + MAP ============ -->
+  <div style="margin-top:72px; margin-bottom:20px;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#FF8A30; font-weight:700;">F · required app exports · accessibility · canvas map</div>
+    <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; margin-top:16px;">
+      <div style="flex:none; width:460px; border:1px solid #2A2436; border-radius:12px; padding:20px 24px; font-size:12.5px; line-height:1.6; color:#A8ADC0; background:#0C0914;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700;">REQUIRED APPROVED APP EXPORTS · from the Forge app design project</div>
+        <div style="margin-top:12px; display:flex; flex-direction:column; gap:9px;">
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-01</span><span>Desktop TUI — live session with a pending permission prompt → A1/B1/C1 step 1, E-01</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-02</span><span>iPhone lock screen — generic Forge notification → B1 step 2, E-03</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-03</span><span>iPhone — live session view with Allow/Deny sheet → A1/B1/C1 step 2, E-04/05</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-04</span><span>Desktop — idle checkpoint + handoff initiation → E-06/07</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-05</span><span>Laptop — handoff verification/complete, “Continue here” → all step 3s, E-08/09</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-06</span><span>Offline history browsing state → B1 features card 2</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-07</span><span>Host fleet list (3 hosts, one offline) → B1 features card 3</span></div>
+          <div style="display:flex; gap:10px;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FFD9B8; flex:none;">FA-08</span><span>Replay share viewer, read-only with expiry → B1 features card 6</span></div>
+        </div>
+        <div style="margin-top:12px; padding-top:10px; border-top:1px solid #1E1A28; color:#8B90A5;">Until these land, the device mocks above are neutral placeholder compositions. When composing approved exports into frames: never alter navigation, components, status language, or control placement. Exports must contain no real prompts, commands, filenames, repos, diffs, transcripts, or recovery material.</div>
+      </div>
+      <div style="flex:none; width:340px; border:1px dashed #3A3448; border-radius:12px; padding:18px 20px; font-size:12.5px; line-height:1.65; color:#A8ADC0;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700; margin-bottom:8px;">ACCESSIBILITY · WCAG 2.2 AA</div>
+        <div>· Landmarks: header / nav / main / footer; one h1, h2 per section, no skips.</div>
+        <div style="margin-top:7px;">· Pricing = radiogroup (arrow keys, aria-checked); FAQ + crypto detail = native details/summary. Both fully keyboard + SR operable.</div>
+        <div style="margin-top:7px;">· Focus: 2px accent outline, 2px offset, on every interactive element (beat 05 shows the style).</div>
+        <div style="margin-top:7px;">· Contrast: dark accent #FF8A30 on #12080A and light accent #B65108 on cream both pass AA at used sizes; statuses pair color with a glyph + label — nothing rides on color, motion, or hover alone.</div>
+        <div style="margin-top:7px;">· 200% zoom + long strings: no fixed heights, wrapping buttons, balanced headlines.</div>
+        <div style="margin-top:7px;">· Analytics: first-party funnel only — landing_view → trial_start → first_host → first_remote_session → first_handoff → checkout → paid. No marketing cookies, no content-derived metadata.</div>
+      </div>
+      <div style="flex:none; width:300px; border:1px dashed #3A3448; border-radius:12px; padding:18px 20px; font-size:12.5px; line-height:1.65; color:#A8ADC0;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#FF8A30; font-weight:700; margin-bottom:8px;">CANVAS MAP</div>
+        <div>· A — homepage additions (desktop 1200 + mobile 390): nav entry, secondary section, trust line, one outline CTA.</div>
+        <div style="margin-top:7px;">· B — /anywhere desktop 1360, full 13-section narrative; pricing toggle live.</div>
+        <div style="margin-top:7px;">· C — /anywhere mobile 390 (complete) + tablet 1024 (key collapses).</div>
+        <div style="margin-top:7px;">· D — light theme, trust-critical sections.</div>
+        <div style="margin-top:7px;">· E — 9-beat continuity storyboard, static + motion notes.</div>
+        <div style="margin-top:7px;">· F — app-export manifest, a11y notes, this map.</div>
+      </div>
+    </div>
+  </div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { billing: 'annual' };
+  renderVals() {
+    const a = this.state.billing === 'annual';
+    return {
+      pickAnnual: () => this.setState({ billing: 'annual' }),
+      pickMonthly: () => this.setState({ billing: 'monthly' }),
+      annualAria: a ? 'true' : 'false', monthlyAria: a ? 'false' : 'true',
+      annualBg: a ? '#FF8A30' : 'transparent', annualC: a ? '#12080A' : 'var(--muted)',
+      monthlyBg: a ? 'transparent' : '#FF8A30', monthlyC: a ? 'var(--muted)' : '#12080A',
+      priceBig: a ? '€79' : '€10', priceUnit: a ? '/year' : '/month',
+      priceNote: a ? 'vs €120 paid monthly — the year saves €41' : 'or €79/yr — €41 less over a year',
+    };
+  }
+}
+</script>
+</body>
+</html>
